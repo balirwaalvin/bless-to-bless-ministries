@@ -100,7 +100,23 @@ export default function AboutPage() {
         </div>
         
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((_, idx) => (
+          {[
+            {
+              name: "Luutu Joseph",
+              role: "Executive Director",
+              desc: "Dedicated to expanding community outreach and securing sustainable partnerships."
+            },
+            {
+              name: "Team Member",
+              role: "Program Coordinator",
+              desc: "Empowering the community through targeted skill-building programs."
+            },
+            {
+              name: "Team Member",
+              role: "Operations Manager",
+              desc: "Ensuring our daily activities align with our faith-driven mission."
+            }
+          ].map((member, idx) => (
             <motion.div 
               key={idx}
               initial={{ opacity: 0, y: 30 }}
@@ -113,10 +129,10 @@ export default function AboutPage() {
                 {/* Image Placeholder */}
                 <div className="absolute inset-0 bg-[#2E2A25]/5 mix-blend-multiply" />
               </div>
-              <h4 className="text-2xl font-serif text-[#2E2A25]">Jane Doe</h4>
-              <p className="text-[#944C42] font-medium text-sm tracking-wide uppercase mb-2">Executive Director</p>
+              <h4 className="text-2xl font-serif text-[#2E2A25]">{member.name}</h4>
+              <p className="text-[#944C42] font-medium text-sm tracking-wide uppercase mb-2">{member.role}</p>
               <p className="text-[#2E2A25]/70 font-light leading-relaxed">
-                Dedicated to expanding community outreach and securing sustainable partnerships.
+                {member.desc}
               </p>
             </motion.div>
           ))}
