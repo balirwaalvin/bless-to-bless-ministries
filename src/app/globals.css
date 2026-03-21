@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F5F2E9; /* Warm cream */
+  --foreground: #2E2A25; /* Soft dark brown instead of harsh black */
+  --brand-sage: #3C4A3E; /* Comforting dark green */
+  --brand-rust: #944C42; /* Soft terracotta red */
+  --brand-sand: #E3DCC8; /* Deeper cream for cards */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-serif: var(--font-playfair);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Disabled automatic dark mode to preserve the warm earthy palette and prevent invisible text */
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #2E2A25;
+    --foreground: #F5F2E9;
+  }
+} 
+*/
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
