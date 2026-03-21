@@ -29,7 +29,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-lg font-serif text-[#2E2A25] mb-1">Our Location</h4>
-                  <p className="text-[#2E2A25]/70 font-light">123 Ministry Road<br/>Hopeville, Faith State 45678</p>
+                  <p className="text-[#2E2A25]/70 font-light">Kampala, Uganda<br/>P.O. Box 12345</p>
                 </div>
               </div>
 
@@ -39,7 +39,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h4 className="text-lg font-serif text-[#2E2A25] mb-1">Phone Number</h4>
-                  <p className="text-[#2E2A25]/70 font-light">+1 (555) 123-4567</p>
+                  <p className="text-[#2E2A25]/70 font-light">+256 700 000 000</p>
                 </div>
               </div>
 

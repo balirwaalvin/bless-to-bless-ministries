@@ -27,38 +27,38 @@ export default function ImpactPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
             {
-              name: "Sarah M.",
+              name: "Namagembe S.",
               program: "Education Scholarship",
               color: "bg-[#E5DFCC]",
-              quote: "The scholarship didn’t just pay for my books; it gave me the confidence to dream bigger. I am now the first in my family to attend university."
+              quote: "The scholarship didn’t just pay for my books; it gave me the confidence to dream bigger. I am now the first in my family to attend Makerere University."
             },
             {
-              name: "David's Family",
+              name: "Kato's Family",
               program: "Community Empowerment",
               color: "bg-[#E3C8B7]",
-              quote: "With the micro-loan and agricultural training, our farm's yield doubled. We can now comfortably feed our children and save for their future."
+              quote: "With the micro-loan and agricultural training, our farm yield in Luweero doubled. We can now comfortably feed our children and save for their future."
             },
             {
-              name: "Hope Village",
+              name: "Kasese Community",
               program: "Charity Outreach",
               color: "bg-[#D1D5CD]",
-              quote: "When the floods took our homes, Bless to Bless was there the next day. The emergency relief provided us with food and medical care when we needed it most."
+              quote: "When the heavy rains took our homes, Bless to Bless was there the next day. The emergency relief provided us with food and medical care when we needed it most."
             },
             {
-              name: "Elena R.",
+              name: "Nakato E.",
               program: "Vocational Training",
               color: "bg-[#2B362E]",
               textDark: true,
-              quote: "Learning tailoring gave me independence. I now run my own small business from home and am teaching other women in my neighborhood."
+              quote: "Learning tailoring gave me independence. I now run my own small business from home in Kampala and am teaching other women in my neighborhood."
             },
             {
-              name: "Pastor John",
+              name: "Pastor Mukisa",
               program: "Community Partner",
               color: "bg-[#EAE5D9]",
-              quote: "Partnering with this ministry has transformed our local outreach. We are reaching more families than we ever thought possible."
+              quote: "Partnering with this ministry has transformed our local outreach. We are reaching more families in Wakiso than we ever thought possible."
             },
             {
-              name: "Michael T.",
+              name: "Mugisha T.",
               program: "Education Program",
               color: "bg-[#E5DFCC]",
               quote: "The new school facilities provided a safe environment for our students. Attendance has gone up by 40% since the renovation."

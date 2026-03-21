@@ -107,12 +107,12 @@ export default function AboutPage() {
               desc: "Dedicated to expanding community outreach and securing sustainable partnerships."
             },
             {
-              name: "Team Member",
+              name: "Nalwoga Sarah",
               role: "Program Coordinator",
               desc: "Empowering the community through targeted skill-building programs."
             },
             {
-              name: "Team Member",
+              name: "Mugisha David",
               role: "Operations Manager",
               desc: "Ensuring our daily activities align with our faith-driven mission."
             }

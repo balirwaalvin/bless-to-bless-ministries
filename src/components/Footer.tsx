@@ -44,11 +44,11 @@ export default function Footer() {
           <ul className="flex flex-col gap-4 font-light text-[#F5F2E9]/80">
             <li className="flex items-start gap-3">
               <MapPin size={18} className="text-[#944C42] mt-1 shrink-0" />
-              <span>123 Ministry Road<br/>Hopeville, Faith State 45678</span>
+              <span>Kampala, Uganda<br/>P.O. Box 12345</span>
             </li>
             <li className="flex items-center gap-3">
               <Phone size={18} className="text-[#944C42] shrink-0" />
-              <span>+1 (555) 123-4567</span>
+              <span>+256 700 000 000</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail size={18} className="text-[#944C42] shrink-0" />
