@@ -1,12 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ArrowRight, HeartHandshake, BookOpen, Users, Globe2, ChevronDown } from "lucide-react";
+import { motion, type Variants } from "framer-motion";
+import { ArrowRight, HeartHandshake, BookOpen, Users, Globe2, ChevronDown, HandCoins, Handshake, Mail, MessageSquareText, BriefcaseBusiness, Clapperboard } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 // Animation Variants
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } }
 };
@@ -70,7 +69,7 @@ export default function Home() {
 
           <motion.div variants={fadeInUp} className="max-w-2xl">
             <p className="text-lg sm:text-xl text-[#2E2A25]/70 font-light mb-10 leading-relaxed">
-              We are dedicated to education, community empowerment, and charitable outreach—transforming communities through faith, action, and love.
+              Serving Buyala with compassion and purpose.
             </p>
           </motion.div>
 
@@ -108,7 +107,96 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 2. IMPACT STATISTICS SECTION */}
+      {/* 2. PRIMARY ACTIONS SECTION */}
+      <section className="py-24 bg-[#EFE8D8] relative z-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.7 }}
+            className="mb-12"
+          >
+            <h2 className="text-4xl md:text-5xl font-serif text-[#2E2A25] mb-4">Take Action Today</h2>
+            <p className="text-[#2E2A25]/70 max-w-3xl text-lg font-light leading-relaxed">
+              Join our mission through giving, partnership, communication, and media engagement. Every action strengthens our impact in Buyala.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Donate Now",
+                desc: "Give one-time or recurring support: daily, weekly, monthly, or yearly.",
+                href: "/get-involved#donate",
+                cta: "Start Giving",
+                icon: HandCoins,
+              },
+              {
+                title: "Become a Partner",
+                desc: "Partner with us as an individual, church, NGO, or business.",
+                href: "/get-involved#partner",
+                cta: "Partner With Us",
+                icon: Handshake,
+              },
+              {
+                title: "Subscribe to Newsletter",
+                desc: "Receive updates, stories, and progress from our ongoing work.",
+                href: "/contact",
+                cta: "Subscribe",
+                icon: Mail,
+              },
+              {
+                title: "Get in Contact",
+                desc: "Reach out for collaboration, support questions, or ministry inquiries.",
+                href: "/contact",
+                cta: "Contact Us",
+                icon: MessageSquareText,
+              },
+              {
+                title: "Sponsor a Project",
+                desc: "Engage directly in a project through sponsorship, volunteering, or donation.",
+                href: "/get-involved#sponsor",
+                cta: "View Opportunities",
+                icon: BriefcaseBusiness,
+              },
+              {
+                title: "See Media & Videos",
+                desc: "Follow social updates and video clips to witness impact on the ground.",
+                href: "/media",
+                cta: "Explore Media",
+                icon: Clapperboard,
+              },
+            ].map((action, idx) => {
+              const Icon = action.icon;
+              return (
+                <motion.div
+                  key={action.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ delay: idx * 0.06, duration: 0.5 }}
+                  className="bg-[#F5F2E9] rounded-3xl p-7 border border-[#D8CDB5] shadow-sm"
+                >
+                  <div className="w-12 h-12 rounded-full bg-[#E5DFCC] text-[#7A643E] flex items-center justify-center mb-4">
+                    <Icon size={22} />
+                  </div>
+                  <h3 className="text-2xl font-serif text-[#2E2A25] mb-2">{action.title}</h3>
+                  <p className="text-[#2E2A25]/70 font-light mb-5 leading-relaxed">{action.desc}</p>
+                  <Link
+                    href={action.href}
+                    className="inline-flex items-center gap-2 text-[#944C42] hover:text-[#7A3E35] font-medium transition-colors"
+                  >
+                    {action.cta} <ArrowRight size={16} />
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 3. IMPACT STATISTICS SECTION */}
       <section className="py-24 bg-[#2B362E] text-[#F5F2E9] relative z-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <motion.div 
@@ -142,7 +230,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. PROGRAMS HIGHLIGHT SECTION (Editorial Style) */}
+      {/* 4. PROGRAMS HIGHLIGHT SECTION (Editorial Style) */}
       <section className="py-32 relative bg-[#F5F2E9]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           
@@ -214,7 +302,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. DONATION CTA SECTION */}
+      {/* 5. DONATION CTA SECTION */}
       <section className="py-24 bg-[#E3C8B7] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] mix-blend-overlay"></div>
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10">

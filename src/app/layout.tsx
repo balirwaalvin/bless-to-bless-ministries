@@ -19,9 +19,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteTitle = "Bless to Bless Ministries";
+const siteDescription = "Serving Buyala with compassion and purpose.";
+
 export const metadata: Metadata = {
-  title: "Bless to Bless Ministries",
-  description: "Empowering Lives, Inspiring Hope. Education, Community, and Charity.",
+  title: siteTitle,
+  description: siteDescription,
+  openGraph: {
+    title: siteTitle,
+    description: siteDescription,
+    siteName: siteTitle,
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: siteTitle,
+    description: siteDescription,
+  },
 };
 
 export default function RootLayout({
@@ -30,8 +44,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]`}>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]`}>
         <Navbar />
         <div className="flex-1">
           {children}
