@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { HeartHandshake, Mail, MapPin, Phone } from "lucide-react";
 
 export default function Footer() {
@@ -10,13 +11,14 @@ export default function Footer() {
         
         {/* Brand & Mission */}
         <div className="md:col-span-1">
-          <Link href="/" className="flex items-center gap-2 mb-6 group">
-            <div className="w-10 h-10 rounded-full bg-[#944C42] flex items-center justify-center text-[#F5F2E9] transition-colors">
-              <span className="font-serif text-xl italic leading-none">B</span>
-            </div>
-            <span className="font-serif text-xl tracking-tight font-medium">
-              Bless <span className="italic text-[#E3C8B7]">to Bless</span>
-            </span>
+          <Link href="/" className="mb-6 inline-block group">
+            <Image
+              src="/bless to bless logo.png"
+              alt="Bless to Bless Ministries logo"
+              width={260}
+              height={80}
+              className="h-14 w-auto"
+            />
           </Link>
           <p className="text-[#F5F2E9]/70 font-light leading-relaxed mb-6">
             Empowering lives and inspiring hope through education, community building, and charitable outreach.

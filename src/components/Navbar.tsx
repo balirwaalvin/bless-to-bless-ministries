@@ -3,6 +3,7 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { HeartHandshake, Menu, X } from "lucide-react";
 
 export default function Navbar() {
@@ -39,13 +40,15 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group z-50">
-          <div className="w-10 h-10 rounded-full bg-[#3C4A3E] flex items-center justify-center text-[#F5F2E9] group-hover:bg-[#944C42] transition-colors">
-            <span className="font-serif text-xl italic leading-none">B</span>
-          </div>
-          <span className="font-serif text-lg tracking-tight font-medium text-[#2E2A25]">
-            Bless <span className="italic text-[#944C42]">to Bless</span>
-          </span>
+        <Link href="/" className="group z-50">
+          <Image
+            src="/bless to bless logo.png"
+            alt="Bless to Bless Ministries logo"
+            width={260}
+            height={80}
+            priority
+            className="h-12 w-auto md:h-14"
+          />
         </Link>
 
         {/* Desktop Nav */}
