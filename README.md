@@ -1,35 +1,56 @@
 # Bless to Bless Ministries
 
-A professional, dynamic, and highly animated web platform for **Bless to Bless Ministries**. Built to showcase their impact, programs, and mission through a uniquely crafted digital experience.
+A professional, dynamic, and highly animated web platform for **Bless to Bless Ministries**.
 
-## ? Features
-- **Dynamic Animations**: Vast, fluid, and staggered animations driven by framer-motion to keep visitors engaged.
-- **Warm Earthy Palette**: Designed with comfort in mind using custom #F5F2E9 cream and #2E2A25 dark brown values instead of stark whites.
-- **Modern Tech Stack**: Scaffolded with the industry standard Next.js App Router for optimal performance.
-- **Fully responsive Layout**: Mobile-ready components, including a Navbar and global layout elements.
+## Features
+- Dynamic animations powered by Framer Motion.
+- Warm earthy palette with an accessible, responsive layout.
+- Next.js App Router architecture for performance and maintainability.
 
-## ??? Tech Stack
-- **Framework:** Next.js (App Router)
-- **Styling:** Tailwind CSS v4
-- **Animations:** Framer Motion
-- **Icons:** Lucide React
+## Tech Stack
+- Framework: Next.js (App Router)
+- Styling: Tailwind CSS v4
+- Animations: Framer Motion
+- Icons: Lucide React
 
-## ?? Getting Started
+## Local Development
 
-To get a local copy up and running, follow these simple steps:
+1. Install dependencies:
 
-1. Clone the repository
-   git clone https://github.com/balirwaalvin/bless-to-bless-ministries.git
+```bash
+npm install
+```
 
-2. Navigate to the project directory
-   cd bless-to-bless-ministries/site
+2. Start the dev server:
 
-3. Install NPM packages
-   
-pm install
+```bash
+npm run dev
+```
 
-4. Run the development server
-   
-pm run dev
+3. Open `http://localhost:3000`.
 
-Open http://localhost:3000 with your browser to see the result.
+## Static Build (DigitalOcean Ready)
+
+This project is configured for static export in `next.config.ts` using:
+
+- `output: "export"`
+- `images.unoptimized: true`
+- `trailingSlash: true`
+
+Generate static files:
+
+```bash
+npm run build
+```
+
+The deployable output is written to the `out/` directory.
+
+## DigitalOcean Static Site Settings
+
+For an App Platform Static Site deployment:
+
+- Source Directory: `site`
+- Build Command: `npm install && npm run build`
+- Output Directory: `out`
+
+If you deploy from inside the `site` folder directly, omit the Source Directory value.
