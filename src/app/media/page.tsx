@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import TextReveal from "@/components/TextReveal";
 
 export default function GalleryPage() {
   return (
@@ -11,12 +12,26 @@ export default function GalleryPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-serif text-[#2E2A25] mb-4">
-            Our <span className="italic text-[#944C42]">Gallery</span>
-          </h1>
-          <p className="text-xl text-[#2E2A25]/70 font-light max-w-2xl mx-auto">
-            Glimpses of hope, progress, and joy from our missions around the world.
-          </p>
+          <TextReveal
+            as="h1"
+            text="Our Gallery"
+            className="text-5xl md:text-7xl font-serif text-[#2E2A25] mb-4"
+          />
+          <TextReveal
+            as="p"
+            text="Glimpses of hope, progress, and joy from our missions around the world."
+            delay={0.25}
+            className="text-xl text-[#2E2A25]/70 font-light max-w-2xl mx-auto"
+          />
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="mt-8 text-[#7A643E] text-sm uppercase tracking-[0.2em] orbital-float"
+        >
+          Stories In Motion
         </motion.div>
       </section>
 

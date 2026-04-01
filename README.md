@@ -54,3 +54,19 @@ For an App Platform Static Site deployment:
 - Output Directory: `out`
 
 If you deploy from inside the `site` folder directly, omit the Source Directory value.
+
+## Appwrite Deployment Notes
+
+This project is a static export (`output: "export"`).
+
+- Preferred (Sites static hosting):
+- Root/Source directory: `site`
+- Build command: `npm install && npm run build`
+- Publish/output directory: `out`
+- No runtime start command required
+
+- If you deploy it as a runtime service instead of static hosting:
+- Use `npm run build` during build
+- Use `npm run start` for runtime
+
+Why: `next start` is incompatible with `output: "export"` and can cause runtime startup failures/timeouts.

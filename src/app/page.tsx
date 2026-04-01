@@ -3,6 +3,7 @@
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, HeartHandshake, BookOpen, Users, Globe2, ChevronDown, HandCoins, Handshake, Mail, MessageSquareText, BriefcaseBusiness, Clapperboard } from "lucide-react";
 import Link from "next/link";
+import TextReveal from "@/components/TextReveal";
 
 // Animation Variants
 const fadeInUp: Variants = {
@@ -54,18 +55,24 @@ export default function Home() {
           className="relative block max-w-6xl mx-auto w-full z-10"
         >
           <motion.div variants={fadeInUp} className="mb-4">
-            <span className="inline-block py-1 px-3 rounded-full border border-[#D5CAA4] bg-[#F5F2E9]/80 text-[#7A643E] text-sm font-medium tracking-wide uppercase">
+            <span className="inline-block py-1 px-3 rounded-full border border-[#D5CAA4] bg-[#F5F2E9]/80 text-[#7A643E] text-sm font-medium tracking-wide uppercase kinetic-label">
               Bless to Bless Ministries
             </span>
           </motion.div>
-          
-          <motion.h1 
-            variants={fadeInUp}
-            className="text-6xl sm:text-7xl lg:text-8xl xl:text-[7.5rem] font-serif tracking-tight leading-[0.95] text-[#2E2A25] mb-8"
-          >
-            Empowering Lives. <br />
-            <span className="text-[#944C42] italic font-light opacity-90">Inspiring Hope.</span>
-          </motion.h1>
+
+          <motion.div variants={fadeInUp} className="mb-8">
+            <TextReveal
+              as="h1"
+              text="Empowering Lives."
+              className="text-6xl sm:text-7xl lg:text-8xl xl:text-[7.5rem] font-serif tracking-tight leading-[0.95] text-[#2E2A25]"
+            />
+            <TextReveal
+              as="h1"
+              text="Inspiring Hope."
+              delay={0.2}
+              className="text-5xl sm:text-6xl lg:text-7xl xl:text-[6rem] font-serif italic font-light tracking-tight leading-[1] text-[#944C42] opacity-90"
+            />
+          </motion.div>
 
           <motion.div variants={fadeInUp} className="max-w-2xl">
             <p className="text-lg sm:text-xl text-[#2E2A25]/70 font-light mb-10 leading-relaxed">
@@ -117,7 +124,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-serif text-[#2E2A25] mb-4">Take Action Today</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-[#2E2A25] mb-4 kinetic-label">Take Action Today</h2>
             <p className="text-[#2E2A25]/70 max-w-3xl text-lg font-light leading-relaxed">
               Join our mission through giving, partnership, communication, and media engagement. Every action strengthens our impact in Buyala.
             </p>

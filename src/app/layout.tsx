@@ -45,7 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} antialiased min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]`}>
+      <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} app-ambient antialiased min-h-screen flex flex-col bg-[var(--background)] text-[var(--foreground)]`}>
         <Navbar />
         <div className="flex-1">
           {children}
