@@ -19,7 +19,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteTitle = "Bless to Bless Ministries";
+const siteTitle = "Bless to Bless Rehabilitation Center";
 const siteDescription = "Serving Buyala with compassion and purpose.";
 
 export const metadata: Metadata = {

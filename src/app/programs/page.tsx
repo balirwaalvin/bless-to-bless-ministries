@@ -1,42 +1,60 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { BookOpen, Users, Globe2, ArrowRight } from "lucide-react";
+import { ArrowRight, BookOpen, GraduationCap, School, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
 
 const programs = [
   {
-    id: "education",
-    title: "Education Programs",
-    icon: BookOpen,
-    color: "bg-[#E5DFCC]",
-    textColor: "text-[#7A643E]",
-    description: "We believe education is the most powerful weapon to change the world. Our educational initiatives provide scholarships, school supplies, and infrastructure development to schools in underprivileged areas.",
-    stats: ["5,000+ Students Sponsored", "12 Schools Built", "50+ Teachers Trained"]
+    id: "school-outreach",
+    title: "School Outreach",
+    icon: School,
+    color: "bg-[#E7F0B8]",
+    textColor: "text-[#5B6E27]",
+    description: "We partner with schools to provide scholastic materials, mentorship visits, and life-skills sessions that keep learners motivated and in class.",
+    stats: ["35 Partner Schools", "4,800+ Learners Reached", "120 School Visits"]
   },
   {
-    id: "empowerment",
+    id: "girls-ministry",
+    title: "Girls' Ministry",
+    icon: BookOpen,
+    color: "bg-[#CFE36E]",
+    textColor: "text-[#C5352F]",
+    description: "A safe and faith-centered program that nurtures confidence, dignity, health awareness, and leadership in girls across different age groups.",
+    stats: ["900+ Girls Mentored", "22 Mentorship Groups", "80 Care Kits Distributed"]
+  },
+  {
+    id: "ex-prisoners-program",
+    title: "Ex-Prisoners Program",
+    icon: ShieldCheck,
+    color: "bg-[#D7E6A4]",
+    textColor: "text-[#32431B]",
+    description: "We support reintegration through counseling, discipleship, employability training, and practical support as former prisoners rebuild their lives.",
+    stats: ["260 Lives Restored", "140 Job Placements", "45 Small Businesses Started"]
+  },
+  {
+    id: "leadership-development",
+    title: "Leadership Development",
+    icon: GraduationCap,
+    color: "bg-[#D8D7E5]",
+    textColor: "text-[#44436B]",
+    description: "We equip youth and community leaders with communication, planning, and service-oriented leadership skills for long-term transformation.",
+    stats: ["500+ Leaders Trained", "18 Leadership Cohorts", "60 Community Projects Led"]
+  },
+  {
+    id: "community-empowerment",
     title: "Community Empowerment",
     icon: Users,
-    color: "bg-[#E3C8B7]",
-    textColor: "text-[#944C42]",
-    description: "Empowering adults translates to empowered families. We offer vocational training, micro-finance opportunities, and sustainable agricultural education to help communities become self-reliant.",
-    stats: ["1,200 Businesses Funded", "3,000+ Vocationally Trained", "15 Co-ops Established"]
-  },
-  {
-    id: "outreach",
-    title: "Charity Outreach",
-    icon: Globe2,
-    color: "bg-[#D1D5CD]",
-    textColor: "text-[#3C4A3E]",
-    description: "During times of crisis, we are on the ground. Our charity outreach provides immediate relief, including food distribution, clean water access, and emergency medical camps.",
-    stats: ["100k+ Meals Distributed", "25 Clean Water Wells", "40 Medical Camps"]
+    color: "bg-[#DCE8DF]",
+    textColor: "text-[#32431B]",
+    description: "Families receive practical support through vocational training, savings groups, and economic empowerment pathways.",
+    stats: ["1,200 Households Supported", "300 Start-up Grants", "15 Active Savings Groups"]
   }
 ];
 
 export default function ProgramsPage() {
   return (
-    <main className="min-h-screen pt-32 pb-20 bg-[#F5F2E9]">
+    <main className="min-h-screen pt-32 pb-20 bg-[#F8FAEE]">
       <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-24">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -44,10 +62,10 @@ export default function ProgramsPage() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <h1 className="text-5xl md:text-7xl font-serif text-[#2E2A25] mb-6">
-            Our <span className="italic text-[#944C42]">Programs</span>
+          <h1 className="text-5xl md:text-7xl font-serif text-[#202612] mb-6">
+            Our <span className="italic text-[#C5352F]">Programs</span>
           </h1>
-          <p className="text-xl text-[#2E2A25]/70 font-light leading-relaxed">
+          <p className="text-xl text-[#202612]/70 font-light leading-relaxed">
             Targeted initiatives designed to break the cycle of poverty and bring holistic transformation to communities in need.
           </p>
         </motion.div>
@@ -66,8 +84,8 @@ export default function ProgramsPage() {
             <div className={`w-full md:w-1/2 aspect-square md:aspect-[4/3] rounded-[2rem] ${program.color} relative overflow-hidden flex items-center justify-center p-12`}>
                <program.icon className={`w-32 h-32 ${program.textColor} opacity-20 absolute`} />
                <div className="relative z-10 text-center">
-                 <p className="text-[#2E2A25] font-serif text-2xl mb-4 italic">Spotlight</p>
-                 <span className="text-[#2E2A25]/50 text-sm tracking-widest uppercase">Image Placeholder</span>
+                 <p className="text-[#202612] font-serif text-2xl mb-4 italic">Spotlight</p>
+                 <span className="text-[#202612]/50 text-sm tracking-widest uppercase">Image Placeholder</span>
                </div>
             </div>
 
@@ -77,17 +95,17 @@ export default function ProgramsPage() {
                 <div className={`w-12 h-12 rounded-full ${program.color} flex items-center justify-center`}>
                   <program.icon className={program.textColor} size={24} />
                 </div>
-                <h2 className="text-4xl font-serif text-[#2E2A25]">{program.title}</h2>
+                <h2 className="text-4xl font-serif text-[#202612]">{program.title}</h2>
               </div>
               
-              <p className="text-lg text-[#2E2A25]/70 font-light leading-relaxed mb-8">
+              <p className="text-lg text-[#202612]/70 font-light leading-relaxed mb-8">
                 {program.description}
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {program.stats.map((stat, sIdx) => (
-                  <div key={sIdx} className="flex items-center gap-2 text-[#2E2A25]">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#944C42]" />
+                  <div key={sIdx} className="flex items-center gap-2 text-[#202612]">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#C5352F]" />
                     <span className="font-light">{stat}</span>
                   </div>
                 ))}
@@ -95,7 +113,7 @@ export default function ProgramsPage() {
 
               <Link 
                 href="/donate" 
-                className="inline-flex items-center gap-2 text-[#944C42] font-medium border-b border-[#944C42] pb-1 hover:text-[#7A3E35] hover:border-[#7A3E35] transition-colors"
+                className="inline-flex items-center gap-2 text-[#C5352F] font-medium border-b border-[#C5352F] pb-1 hover:text-[#8F241F] hover:border-[#8F241F] transition-colors"
               >
                 Support this program <ArrowRight size={16} />
               </Link>

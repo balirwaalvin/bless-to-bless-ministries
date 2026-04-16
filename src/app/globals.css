@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F5F2E9; /* Warm cream */
-  --foreground: #2E2A25; /* Soft dark brown instead of harsh black */
-  --brand-sage: #3C4A3E; /* Comforting dark green */
-  --brand-rust: #944C42; /* Soft terracotta red */
-  --brand-sand: #E3DCC8; /* Deeper cream for cards */
+  --background: #f8faee;
+  --foreground: #202612;
+  --brand-olive: #32431b;
+  --brand-leaf: #b7d74a;
+  --brand-lime: #cfe36e;
+  --brand-red: #c5352f;
+  --brand-red-deep: #8f241f;
+  --brand-card: #e7f0b8;
 }
 
 @theme inline {
@@ -20,8 +23,8 @@
 /* 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #2E2A25;
-    --foreground: #F5F2E9;
+    --background: #202612;
+    --foreground: #F8FAEE;
   }
 } 
 */
@@ -29,7 +32,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), "Segoe UI", sans-serif;
 }
 
 .route-shell {
@@ -47,7 +50,7 @@ body {
   height: 100vh;
   pointer-events: none;
   z-index: 70;
-  background: linear-gradient(90deg, transparent 0%, rgba(148, 76, 66, 0.14) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(183, 215, 74, 0.24) 45%, rgba(197, 53, 47, 0.18) 65%, transparent 100%);
   mix-blend-mode: multiply;
 }
 
@@ -70,14 +73,14 @@ body {
 }
 
 .app-ambient::before {
-  background: radial-gradient(circle, #e3c8b7 0%, transparent 60%);
+  background: radial-gradient(circle, rgba(207, 227, 110, 0.9) 0%, transparent 62%);
   top: -12rem;
   right: -12rem;
   animation: ambientFloatA 22s ease-in-out infinite;
 }
 
 .app-ambient::after {
-  background: radial-gradient(circle, #d5caa4 0%, transparent 62%);
+  background: radial-gradient(circle, rgba(197, 53, 47, 0.75) 0%, transparent 64%);
   bottom: -16rem;
   left: -14rem;
   animation: ambientFloatB 26s ease-in-out infinite;
@@ -165,7 +168,7 @@ body {
   right: -20%;
   bottom: -2px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #944c42, transparent);
+  background: linear-gradient(90deg, transparent, #c5352f, transparent);
   transform: translateX(-50%);
   animation: kineticUnderline 2.4s ease-in-out infinite;
 }
