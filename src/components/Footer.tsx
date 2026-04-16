@@ -2,7 +2,45 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { HeartHandshake, Mail, MapPin, Phone } from "lucide-react";
+import {
+  Facebook,
+  HeartHandshake,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61569218362710",
+    icon: Facebook,
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@blessedtoblessuganda?si=2AHa05UZoGMqvDip",
+    icon: Youtube,
+  },
+  {
+    name: "X",
+    href: "https://x.com/B2BRehab",
+    icon: Twitter,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/blessedto-blessug-a83631403",
+    icon: Linkedin,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/blessedtoblessug/",
+    icon: Instagram,
+  },
+];
 
 export default function Footer() {
   return (
@@ -77,6 +115,28 @@ export default function Footer() {
               Subscribe
             </button>
           </form>
+
+          <div className="mt-8">
+            <h5 className="font-serif text-lg text-[#CFE36E] mb-4">Follow Us</h5>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit our ${social.name} page`}
+                    className="inline-flex items-center gap-2 rounded-full border border-[#5B7330] bg-[#243513]/80 px-4 py-2 text-sm text-[#F8FAEE]/90 hover:border-[#CFE36E] hover:text-[#CFE36E] transition-colors"
+                  >
+                    <Icon size={15} />
+                    <span>{social.name}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
 
