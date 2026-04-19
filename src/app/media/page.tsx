@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import TextReveal from "@/components/TextReveal";
 import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
 
@@ -11,6 +12,21 @@ function XIcon({ size = 20 }: { size?: number }) {
     </svg>
   );
 }
+
+const galleryImages = [
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b1fcf7fd1/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b15c25507/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b14c11e96/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b00d14b1f/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b1d43ca22/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b1995ce91/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b1998ef5d/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c69db647c/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c697644d1/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c63c52cf9/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c67cd1301/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c67142854/preview?project=697cce240018e094963c&output=webp"
+];
 
 const socialPlatforms = [
   {
@@ -79,19 +95,29 @@ export default function GalleryPage() {
 
       <section className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-          {[...Array(12)].map((_, idx) => (
+          {galleryImages.map((src, idx) => (
             <motion.div
               key={idx}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: (idx % 4) * 0.1, duration: 0.5 }}
-              className={`rounded-2xl overflow-hidden bg-[#D7E6A4] relative group ${idx % 7 === 0 ? 'col-span-2 row-span-2' : 'aspect-square'}`}
+              className={`rounded-2xl overflow-hidden bg-[#D7E6A4] relative group shadow-sm ${idx % 7 === 0 ? 'col-span-2 row-span-2' : 'aspect-square'}`}
             >
-              {/* Image Placeholder */}
-              <div className="absolute inset-0 bg-[#202612]/10 group-hover:bg-transparent transition-colors duration-500" />
+              <Image 
+                src={src} 
+                alt={`Gallery image ${idx + 1}`} 
+                fill 
+                className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                unoptimized
+              />
+              
+              <div className="absolute inset-0 bg-[#202612]/20 group-hover:bg-black/10 transition-colors duration-500" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#1F2C12]/40 backdrop-blur-sm">
-                <span className="text-[#F8FAEE] font-medium tracking-wide uppercase text-sm border border-[#F8FAEE] px-4 py-2 rounded-full">View</span>
+                <a href={src.replace('preview', 'view')} target="_blank" rel="noopener noreferrer" className="text-[#F8FAEE] font-medium tracking-wide uppercase text-sm border border-[#F8FAEE] px-4 py-2 rounded-full hover:bg-white/20 transition-colors">
+                  View
+                </a>
               </div>
             </motion.div>
           ))}
