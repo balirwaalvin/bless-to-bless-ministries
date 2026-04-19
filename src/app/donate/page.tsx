@@ -213,7 +213,7 @@ export default function DonatePage() {
 
               <div>
                 <label className="block text-sm font-medium text-[#202612]/80 mb-3">Preferred Payment Method</label>
-                <div className="grid sm:grid-cols-3 gap-3">
+                <div className="grid sm:grid-cols-3 gap-3 mb-6">
                   {[
                     { id: "card", label: "Card" },
                     { id: "mobile-money", label: "Mobile Money" },
@@ -233,6 +233,76 @@ export default function DonatePage() {
                     </button>
                   ))}
                 </div>
+
+                {/* Conditional Payment Detail Inputs */}
+                {paymentMethod === "card" && (
+                  <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                    <div>
+                      <label className="block text-sm font-medium text-[#202612]/80 mb-2">Card Number</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="0000 0000 0000 0000"
+                        className="w-full rounded-lg border border-[#DDE8B0] bg-[#FBFDF1] px-4 py-3 outline-none focus:border-[#C5352F]"
+                      />
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-medium text-[#202612]/80 mb-2">Expiry Date</label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="MM/YY"
+                          className="w-full rounded-lg border border-[#DDE8B0] bg-[#FBFDF1] px-4 py-3 outline-none focus:border-[#C5352F]"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-[#202612]/80 mb-2">CVC</label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="123"
+                          className="w-full rounded-lg border border-[#DDE8B0] bg-[#FBFDF1] px-4 py-3 outline-none focus:border-[#C5352F]"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {paymentMethod === "mobile-money" && (
+                  <div className="animate-in fade-in slide-in-from-top-2 duration-300">
+                    <label className="block text-sm font-medium text-[#202612]/80 mb-2">Mobile Money Number</label>
+                    <input
+                      type="tel"
+                      required
+                      placeholder="+256 700 000000"
+                      className="w-full rounded-lg border border-[#DDE8B0] bg-[#FBFDF1] px-4 py-3 outline-none focus:border-[#C5352F]"
+                    />
+                  </div>
+                )}
+
+                {paymentMethod === "bank" && (
+                  <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
+                    <div>
+                      <label className="block text-sm font-medium text-[#202612]/80 mb-2">Bank Account Number</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="1234567890"
+                        className="w-full rounded-lg border border-[#DDE8B0] bg-[#FBFDF1] px-4 py-3 outline-none focus:border-[#C5352F]"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-[#202612]/80 mb-2">Routing Number / Swift Code</label>
+                      <input
+                        type="text"
+                        required
+                        placeholder="ABCDEF123"
+                        className="w-full rounded-lg border border-[#DDE8B0] bg-[#FBFDF1] px-4 py-3 outline-none focus:border-[#C5352F]"
+                      />
+                    </div>
+                  </div>
+                )}
               </div>
 
               <button
