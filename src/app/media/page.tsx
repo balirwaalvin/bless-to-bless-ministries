@@ -119,7 +119,7 @@ export default function GalleryPage() {
               <div className="absolute inset-0 bg-[#202612]/20 group-hover:bg-black/10 transition-colors duration-500" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#1F2C12]/40 backdrop-blur-sm">
                 <button 
-                  onClick={() => setSelectedImage(src.replace('preview', 'view'))}
+                  onClick={() => setSelectedImage(src)}
                   className="text-[#F8FAEE] font-medium tracking-wide uppercase text-sm border border-[#F8FAEE] px-4 py-2 rounded-full hover:bg-white/20 transition-colors"
                 >
                   View
