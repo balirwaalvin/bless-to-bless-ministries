@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, HeartHandshake } from "lucide-react";
+import { ArrowRight, CheckCircle2, HeartHandshake, Loader2 } from "lucide-react";
 
 const frequencies = ["daily", "weekly", "monthly", "yearly"] as const;
 const amountPresets = [10, 25, 50, 100, 250];
@@ -18,6 +18,8 @@ export default function DonatePage() {
   const [email, setEmail] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [submitted, setSubmitted] = useState(false);
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [processStep, setProcessStep] = useState("");
 
   const finalAmount = useMemo(() => {
     const parsed = Number(customAmount);
@@ -27,14 +29,51 @@ export default function DonatePage() {
     return selectedAmount;
   }, [customAmount, selectedAmount]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const simulateDelay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!fullName.trim() || !email.trim() || finalAmount <= 0) {
       return;
     }
 
-    setSubmitted(true);
+    setIsProcessing(true);
+
+    try {
+      if (paymentMethod === "card") {
+        setProcessStep("Securely connecting to payment gateway...");
+        await simulateDelay(1500);
+        setProcessStep("Verifying card details with your bank...");
+        await simulateDelay(2000);
+        setProcessStep("Authenticating 3D Secure...");
+        await simulateDelay(1500);
+      } else if (paymentMethod === "mobile-money") {
+        setProcessStep("Initiating USSD push to your phone...");
+        await simulateDelay(1500);
+        setProcessStep("Waiting for mobile money PIN confirmation...");
+        await simulateDelay(3000);
+        setProcessStep("Verifying transaction with telecom partner...");
+        await simulateDelay(1500);
+      } else if (paymentMethod === "bank") {
+        setProcessStep("Establishing secure banking link...");
+        await simulateDelay(1500);
+        setProcessStep("Generating virtual account details...");
+        await simulateDelay(1500);
+        setProcessStep("Awaiting deposit confirmation...");
+        await simulateDelay(2500);
+      }
+
+      setProcessStep("Finalizing receipt...");
+      await simulateDelay(800);
+
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsProcessing(false);
+      setProcessStep("");
+    }
   };
 
   return (
@@ -74,6 +113,14 @@ export default function DonatePage() {
                     See Your Impact <ArrowRight size={16} />
                   </Link>
                 </div>
+              </div>
+            </div>
+          ) : isProcessing ? (
+            <div className="flex flex-col items-center justify-center py-20 text-center space-y-6">
+              <Loader2 className="w-12 h-12 text-[#C5352F] animate-spin" />
+              <div>
+                <h2 className="text-2xl font-serif text-[#202612] mb-2">Processing Payment</h2>
+                <p className="text-[#202612]/70 font-light animate-pulse">{processStep}</p>
               </div>
             </div>
           ) : (
