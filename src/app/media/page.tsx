@@ -1,9 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import TextReveal from "@/components/TextReveal";
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube, X } from "lucide-react";
 
 function XIcon({ size = 20 }: { size?: number }) {
   return (
@@ -62,6 +63,8 @@ const socialPlatforms = [
 ];
 
 export default function GalleryPage() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <main className="min-h-screen pt-32 pb-20 bg-[#F8FAEE]">
       <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-16 text-center">
@@ -115,9 +118,12 @@ export default function GalleryPage() {
               
               <div className="absolute inset-0 bg-[#202612]/20 group-hover:bg-black/10 transition-colors duration-500" />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[#1F2C12]/40 backdrop-blur-sm">
-                <a href={src.replace('preview', 'view')} target="_blank" rel="noopener noreferrer" className="text-[#F8FAEE] font-medium tracking-wide uppercase text-sm border border-[#F8FAEE] px-4 py-2 rounded-full hover:bg-white/20 transition-colors">
+                <button 
+                  onClick={() => setSelectedImage(src.replace('preview', 'view'))}
+                  className="text-[#F8FAEE] font-medium tracking-wide uppercase text-sm border border-[#F8FAEE] px-4 py-2 rounded-full hover:bg-white/20 transition-colors"
+                >
                   View
-                </a>
+                </button>
               </div>
             </motion.div>
           ))}
@@ -162,6 +168,43 @@ export default function GalleryPage() {
           </div>
         </motion.div>
       </section>
+
+      {/* Lightbox / Modal for enlarged image */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 md:p-8 backdrop-blur-md"
+          >
+            <motion.div
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative w-full h-full max-w-6xl max-h-[85vh] rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()} // Prevent clicks inside image from closing
+            >
+              <Image
+                src={selectedImage}
+                alt="Enlarged gallery image"
+                fill
+                className="object-contain"
+                unoptimized
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2.5 rounded-full backdrop-blur-md transition-colors"
+                aria-label="Close image"
+              >
+                <X size={24} />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </main>
   );
 }
