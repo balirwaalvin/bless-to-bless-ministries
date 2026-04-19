@@ -16,6 +16,7 @@ export default function DonatePage() {
   const [customAmount, setCustomAmount] = useState("");
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
+  const [designatedChild, setDesignatedChild] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [submitted, setSubmitted] = useState(false);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -104,7 +105,7 @@ export default function DonatePage() {
                 <div>
                   <h2 className="text-xl font-serif text-[#202612] mb-2">Thank you for your commitment.</h2>
                   <p className="text-[#202612]/75 font-light mb-4">
-                    We have recorded your pledge of ${finalAmount} {frequency}. Our team will contact you at {email} with next steps for payment confirmation.
+                    We have recorded your pledge of ${finalAmount} {frequency}{designatedChild ? ` to support ${designatedChild}` : ""}. Our team will contact you at {email} with next steps for payment confirmation.
                   </p>
                   <Link
                     href="/impact"
@@ -197,6 +198,17 @@ export default function DonatePage() {
                     className="w-full rounded-lg border border-[#DDE8B0] bg-[#FBFDF1] px-4 py-3 outline-none focus:border-[#C5352F]"
                   />
                 </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-[#202612]/80 mb-2">Donate to a Specific Child? <span className="font-light text-sm text-[#202612]/50">(Optional)</span></label>
+                <input
+                  type="text"
+                  placeholder="Enter the child's name"
+                  value={designatedChild}
+                  onChange={(e) => setDesignatedChild(e.target.value)}
+                  className="w-full rounded-lg border border-[#DDE8B0] bg-[#FBFDF1] px-4 py-3 outline-none focus:border-[#C5352F]"
+                />
               </div>
 
               <div>
