@@ -42,7 +42,7 @@ export default function ImpactPage() {
               name: "Kasese Community",
               program: "Charity Outreach",
               color: "bg-[#D7E6A4]",
-              quote: "When the heavy rains took our homes, Bless to Bless was there the next day. The emergency relief provided us with food and medical care when we needed it most."
+              quote: "When the heavy rains took our homes, Blessed To Bless was there the next day. The emergency relief provided us with food and medical care when we needed it most."
             },
             {
               name: "Nakato E.",

@@ -1,6 +1,6 @@
-# Bless to Bless Ministries
+# Blessed To Bless Rehabilitation Center
 
-A professional, dynamic, and highly animated web platform for **Bless to Bless Ministries**.
+A professional, dynamic, and highly animated web platform for **Blessed To Bless Rehabilitation Center**.
 
 ## Features
 - Dynamic animations powered by Framer Motion.

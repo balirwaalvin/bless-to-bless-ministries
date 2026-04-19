@@ -2,8 +2,73 @@
 
 import { motion, type Variants } from "framer-motion";
 import { ArrowRight, HeartHandshake, BookOpen, Users, Globe2, ChevronDown, HandCoins, Handshake, Mail, MessageSquareText, BriefcaseBusiness, Clapperboard } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import TextReveal from "@/components/TextReveal";
+
+const heroImages = [
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b1fcf7fd1/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b15c25507/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b14c11e96/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b00d14b1f/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b1d43ca22/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b1995ce91/preview?project=697cce240018e094963c&output=webp",
+  "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e0fb8a000b1998ef5d/preview?project=697cce240018e094963c&output=webp",
+];
+
+function HeroBackground() {
+  // Repeat the images enough times so there's plenty of content to scroll seamlessly
+  const repeatedPattern = [...heroImages, ...heroImages];
+  const loopedImages = [...repeatedPattern, ...repeatedPattern];
+
+  return (
+    <div className="absolute inset-0 z-0 overflow-hidden bg-[#F8FAEE]">
+      <motion.div
+        aria-hidden="true"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+        className="absolute top-[-5%] flex h-[55%] w-max gap-4 opacity-90"
+      >
+        {loopedImages.map((src, index) => (
+          <div key={`row1-${index}`} className="relative h-full w-[280px] sm:w-[350px] lg:w-[450px]">
+            <Image
+              src={src}
+              alt=""
+              fill
+              sizes="(max-width: 640px) 280px, (max-width: 1024px) 350px, 450px"
+              className="object-cover rounded-3xl"
+              unoptimized
+            />
+          </div>
+        ))}
+      </motion.div>
+
+      <motion.div
+        aria-hidden="true"
+        animate={{ x: ["-50%", "0%"] }}
+        transition={{ duration: 70, repeat: Infinity, ease: "linear" }}
+        className="absolute bottom-[-5%] flex h-[55%] w-max gap-4 opacity-90"
+      >
+        {[...loopedImages].reverse().map((src, index) => (
+          <div key={`row2-${index}`} className="relative h-full w-[280px] sm:w-[350px] lg:w-[450px]">
+            <Image
+              src={src}
+              alt=""
+              fill
+              sizes="(max-width: 640px) 280px, (max-width: 1024px) 350px, 450px"
+              className="object-cover rounded-3xl"
+              unoptimized
+            />
+          </div>
+        ))}
+      </motion.div>
+
+      {/* Much lighter Overlays without blur to ensure images are extremely clear */}
+      <div className="absolute inset-0 bg-[#F8FAEE]/25 bg-blend-overlay" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAEE]/10 via-[#F8FAEE]/40 to-[#F8FAEE] opacity-50" />
+    </div>
+  );
+}
 
 // Animation Variants
 const fadeInUp: Variants = {
@@ -27,16 +92,18 @@ export default function Home() {
     <main className="min-h-screen pt-20 overflow-x-hidden selection:bg-[#C5352F]/20 selection:text-[#C5352F]">
       
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex flex-col justify-center px-6 lg:px-12 overflow-hidden">
+      <section className="relative min-h-[92vh] flex items-center px-6 lg:px-12 overflow-hidden">
         {/* Subtle animated background shapes to avoid 'AI look' */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <HeroBackground />
+        
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
           <motion.div 
             animate={{ 
               rotate: [0, 4, -4, 0],
               scale: [1, 1.05, 0.95, 1]
             }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#E7F0B8]/60 mix-blend-multiply blur-[100px]" 
+            className="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] rounded-full bg-[#E7F0B8]/40 mix-blend-multiply blur-[100px]" 
           />
           <motion.div 
             animate={{ 
@@ -44,65 +111,78 @@ export default function Home() {
               scale: [1, 0.95, 1.05, 1]
             }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#CFE36E]/60 mix-blend-multiply blur-[120px]" 
+            className="absolute bottom-[-20%] left-[-10%] w-[60vw] h-[60vw] rounded-full bg-[#CFE36E]/40 mix-blend-multiply blur-[120px]" 
           />
         </div>
 
+        {/* Logo positioned at the very top edge with a blurred backdrop */}
         <motion.div 
-          variants={staggerContainer}
-          initial="hidden"
-          animate="visible"
-          className="relative block max-w-6xl mx-auto w-full z-10"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          className="absolute top-4 sm:top-8 left-1/2 -translate-x-1/2 z-20 rounded-full bg-white/15 backdrop-blur-xl border border-white/30 p-2.5 sm:p-3 shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
         >
-          <motion.div variants={fadeInUp} className="mb-4">
-            <span className="inline-block py-1 px-3 rounded-full border border-[#B7D74A] bg-[#F8FAEE]/80 text-[#5B6E27] text-sm font-medium tracking-wide uppercase kinetic-label">
-              Bless to Bless Rehabilitation Center
-            </span>
-          </motion.div>
-
-          <motion.div variants={fadeInUp} className="mb-8">
-            <TextReveal
-              as="h1"
-              text="Empowering Lives."
-              className="text-6xl sm:text-7xl lg:text-8xl xl:text-[7.5rem] font-serif tracking-tight leading-[0.95] text-[#202612]"
-            />
-            <TextReveal
-              as="h1"
-              text="Inspiring Hope."
-              delay={0.2}
-              className="text-5xl sm:text-6xl lg:text-7xl xl:text-[6rem] font-serif italic font-light tracking-tight leading-[1] text-[#C5352F] opacity-90"
-            />
-          </motion.div>
-
-          <motion.div variants={fadeInUp} className="max-w-2xl">
-            <p className="text-lg sm:text-xl text-[#202612]/70 font-light mb-10 leading-relaxed">
-              Serving Buyala with compassion and purpose.
-            </p>
-          </motion.div>
-
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-5 items-start">
-            <Link href="/donate" className="group relative px-8 py-4 bg-[#C5352F] text-[#F8FAEE] rounded-full overflow-hidden transition-all hover:shadow-xl hover:shadow-[#C5352F]/20 hover:-translate-y-1">
-              <div className="absolute inset-0 bg-[#32431B] translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out" />
-              <span className="relative flex items-center justify-center gap-2 font-medium tracking-wide">
-                Donate Now <HeartHandshake size={18} className="group-hover:scale-110 transition-transform duration-300" />
-              </span>
-            </Link>
-            
-            <Link href="/programs" className="group flex items-center gap-3 px-8 py-4 text-[#202612] font-medium hover:text-[#C5352F] transition-colors">
-              Discover Our Programs 
-              <div className="w-8 h-8 rounded-full border border-[#B7D74A] flex items-center justify-center group-hover:border-[#C5352F] transition-colors">
-                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
-          </motion.div>
+          <Image 
+            src="/favicon.png" 
+            alt="Blessed To Bless Logo" 
+            width={120} 
+            height={120} 
+            className="w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+            priority
+          />
         </motion.div>
+
+        <div className="relative z-10 w-full mx-auto flex flex-col items-center justify-center text-center pt-32 pb-20 lg:pt-40 lg:pb-32">
+          <motion.div 
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+            className="relative flex flex-col items-center max-w-5xl"
+          >
+            <motion.div variants={fadeInUp} className="mb-8">
+              <TextReveal
+                as="h1"
+                text="Empowering Lives."
+                className="text-6xl sm:text-7xl lg:text-8xl xl:text-[8rem] font-serif tracking-tight leading-[0.95] text-[#202612] [text-shadow:0_0_30px_rgba(255,255,255,1),_0_0_60px_rgba(255,255,255,0.8)] max-w-full"
+              />
+              <TextReveal
+                as="h1"
+                text="Inspiring Hope."
+                delay={0.2}
+                className="text-5xl sm:text-6xl lg:text-7xl xl:text-[6.5rem] font-serif italic font-light tracking-tight leading-[1] text-[#C5352F] mt-2 [text-shadow:0_0_30px_rgba(255,255,255,1),_0_0_60px_rgba(255,255,255,0.8)]"
+              />
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="max-w-2xl text-center">
+              <p className="text-xl sm:text-2xl text-[#202612]/80 font-light mb-12 leading-relaxed">
+                Serving Buyala with compassion and purpose.
+              </p>
+            </motion.div>
+
+            <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-5 items-center justify-center auto-cols-auto">
+              <Link href="/donate" className="group relative px-10 py-5 bg-[#C5352F] text-[#F8FAEE] rounded-full overflow-hidden transition-all hover:shadow-2xl hover:shadow-[#C5352F]/20 hover:-translate-y-1">
+                <div className="absolute inset-0 bg-[#32431B] translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-500 ease-out" />
+                <span className="relative flex items-center justify-center gap-3 text-lg font-medium tracking-wide">
+                  Donate Now <HeartHandshake size={20} className="group-hover:scale-110 transition-transform duration-300" />
+                </span>
+              </Link>
+              
+              <Link href="/programs" className="group flex items-center gap-3 px-8 py-5 text-[#202612] font-semibold text-lg hover:text-[#C5352F] transition-colors bg-[#F8FAEE]/70 backdrop-blur-md rounded-full border border-white/60 hover:bg-[#F8FAEE] transition-all shadow-sm">
+                Discover Our Programs 
+                <div className="w-8 h-8 rounded-full border border-[#B7D74A] flex items-center justify-center group-hover:border-[#C5352F] transition-colors bg-white">
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
 
         {/* Scroll Indicator */}
         <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#202612]/40"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[#202612]/40 z-10"
         >
           <span className="text-xs uppercase tracking-widest">Scroll</span>
           <motion.div 
@@ -267,19 +347,22 @@ export default function Home() {
                 title: "School Outreach",
                 desc: "Providing scholastic materials, mentorship sessions, and practical support for learners and schools.",
                 route: "/programs",
-                color: "bg-[#E7F0B8]"
+                color: "bg-[#E7F0B8]",
+                image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c69db647c/preview?project=697cce240018e094963c&output=webp"
               },
               {
                 title: "Girls' Ministry",
                 desc: "Building confidence and purpose through mentorship, discipleship, and life-skills support.",
                 route: "/programs",
-                color: "bg-[#CFE36E]"
+                color: "bg-[#CFE36E]",
+                image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c697644d1/preview?project=697cce240018e094963c&output=webp"
               },
               {
                 title: "Ex-Prisoners Program",
                 desc: "Helping former prisoners reintegrate through counseling, skills training, and practical support.",
                 route: "/programs",
-                color: "bg-[#D7E6A4]"
+                color: "bg-[#D7E6A4]",
+                image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c63c52cf9/preview?project=697cce240018e094963c&output=webp"
               }
             ].map((program, idx) => (
               <motion.div 
@@ -288,20 +371,33 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.7, delay: idx * 0.15 }}
-                className="group cursor-pointer"
+                className="group cursor-pointer flex flex-col h-full"
               >
-                <div className={`aspect-[4/5] w-full rounded-[2rem] ${program.color} mb-6 overflow-hidden relative shadow-sm`}>
-                  {/* Placeholder for real images. Using solid colors as fallback for now to avoid generic AI imagery */}
-                  <div className="absolute inset-0 bg-[#202612]/5 group-hover:bg-transparent transition-colors duration-500" />
+                <Link href={program.route} className="block relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 shadow-sm group-hover:shadow-md transition-shadow">
+                  {program.image ? (
+                    <Image
+                      src={program.image}
+                      alt={program.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      unoptimized
+                    />
+                  ) : (
+                    <div className={`absolute inset-0 ${program.color}`} />
+                  )}
                   
-                  <div className="absolute bottom-6 left-6 right-6">
+                  <div className="absolute inset-0 bg-[#202612]/20 group-hover:bg-black/10 transition-colors duration-500" />
+                  
+                  <div className="absolute bottom-6 left-6 right-6 z-10 pointer-events-none">
                     <div className="w-12 h-12 rounded-full bg-[#F8FAEE] flex items-center justify-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 drop-shadow-xl">
                       <ArrowRight size={20} className="text-[#202612]" />
                     </div>
                   </div>
-                </div>
+                </Link>
                 
-                <h3 className="text-2xl font-serif text-[#202612] mb-3">{program.title}</h3>
+                <Link href={program.route}>
+                  <h3 className="text-2xl font-serif text-[#202612] mb-3 group-hover:text-[#C5352F] transition-colors">{program.title}</h3>
+                </Link>
                 <p className="text-[#202612]/70 font-light leading-relaxed">{program.desc}</p>
               </motion.div>
             ))}

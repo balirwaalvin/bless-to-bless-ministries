@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import Image from "next/image";
 
 const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -31,7 +32,7 @@ export default function AboutPage() {
             Our <span className="italic text-[#C5352F]">Story</span>
           </motion.h1>
           <motion.p variants={fadeInUp} className="text-xl text-[#202612]/70 font-light leading-relaxed">
-            Founded on the principles of compassion and active faith, Bless to Bless Rehabilitation Center began with a simple mission: to bridge the gap between those who want to help and those who desperately need it.
+            Founded on the principles of compassion and active faith, Blessed To Bless Rehabilitation Center began with a simple mission: to bridge the gap between those who want to help and those who desperately need it.
           </motion.p>
         </motion.div>
       </section>
@@ -103,7 +104,8 @@ export default function AboutPage() {
             {
               name: "Luutu Joseph",
               role: "Executive Director",
-              desc: "Dedicated to expanding community outreach and securing sustainable partnerships."
+              desc: "Dedicated to expanding community outreach and securing sustainable partnerships.",
+              image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49ca600396b022960/view?project=697cce240018e094963c&mode=admin"
             },
             {
               name: "Nalwoga Sarah",
@@ -125,8 +127,17 @@ export default function AboutPage() {
               className="group"
             >
               <div className="aspect-square bg-[#D7E6A4] rounded-[2rem] mb-6 overflow-hidden relative">
-                {/* Image Placeholder */}
-                <div className="absolute inset-0 bg-[#202612]/5 mix-blend-multiply" />
+                {member.image ? (
+                  <Image 
+                    src={member.image} 
+                    alt={member.name} 
+                    fill 
+                    className="object-cover" 
+                    unoptimized 
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-[#202612]/5 mix-blend-multiply" />
+                )}
               </div>
               <h4 className="text-2xl font-serif text-[#202612]">{member.name}</h4>
               <p className="text-[#C5352F] font-medium text-sm tracking-wide uppercase mb-2">{member.role}</p>

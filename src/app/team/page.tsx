@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const teamMembers = [
   {
@@ -8,6 +9,7 @@ const teamMembers = [
     role: "Executive Director",
     initials: "LJ",
     bio: "Provides strategic leadership, partnerships, and overall program oversight.",
+    image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49ca600396b022960/view?project=697cce240018e094963c&mode=admin"
   },
   {
     name: "Nalwoga Sarah",
@@ -55,7 +57,7 @@ export default function TeamPage() {
             Meet Our <span className="italic text-[#C5352F]">Team</span>
           </h1>
           <p className="text-xl text-[#202612]/70 font-light leading-relaxed">
-            The staff serving through Bless to Bless Rehabilitation Center with compassion, accountability, and purpose.
+            The staff serving through Blessed To Bless Rehabilitation Center with compassion, accountability, and purpose.
           </p>
           <p className="text-sm text-[#5B6E27] tracking-wide uppercase mt-6">
             Temporary profile photos shown as placeholders
@@ -74,9 +76,21 @@ export default function TeamPage() {
               transition={{ duration: 0.45, delay: idx * 0.06 }}
               className="bg-white rounded-[2rem] border border-[#E8E0CF] p-7 shadow-sm"
             >
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#B7D74A] to-[#CFE36E] flex items-center justify-center text-[#202612] font-serif text-2xl mb-5">
-                {member.initials}
-              </div>
+              {member.image ? (
+                <div className="w-24 h-24 rounded-full overflow-hidden relative mb-5 border-4 border-[#F8FAEE] shadow-sm">
+                  <Image 
+                    src={member.image} 
+                    alt={member.name} 
+                    fill 
+                    className="object-cover"
+                    unoptimized
+                  />
+                </div>
+              ) : (
+                <div className="w-24 h-24 rounded-full bg-gradient-to-br from-[#B7D74A] to-[#CFE36E] flex items-center justify-center text-[#202612] font-serif text-2xl mb-5">
+                  {member.initials}
+                </div>
+              )}
               <h2 className="text-2xl font-serif text-[#202612]">{member.name}</h2>
               <p className="text-[#C5352F] text-sm uppercase tracking-wide font-medium mt-1 mb-3">{member.role}</p>
               <p className="text-[#202612]/70 font-light leading-relaxed">{member.bio}</p>

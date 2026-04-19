@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen, GraduationCap, School, ShieldCheck, Users } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const programs = [
   {
@@ -12,7 +13,8 @@ const programs = [
     color: "bg-[#E7F0B8]",
     textColor: "text-[#5B6E27]",
     description: "We partner with schools to provide scholastic materials, mentorship visits, and life-skills sessions that keep learners motivated and in class.",
-    stats: ["35 Partner Schools", "4,800+ Learners Reached", "120 School Visits"]
+    stats: ["35 Partner Schools", "4,800+ Learners Reached", "120 School Visits"],
+    image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c69db647c/preview?project=697cce240018e094963c&output=webp"
   },
   {
     id: "girls-ministry",
@@ -21,7 +23,8 @@ const programs = [
     color: "bg-[#CFE36E]",
     textColor: "text-[#C5352F]",
     description: "A safe and faith-centered program that nurtures confidence, dignity, health awareness, and leadership in girls across different age groups.",
-    stats: ["900+ Girls Mentored", "22 Mentorship Groups", "80 Care Kits Distributed"]
+    stats: ["900+ Girls Mentored", "22 Mentorship Groups", "80 Care Kits Distributed"],
+    image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c697644d1/preview?project=697cce240018e094963c&output=webp"
   },
   {
     id: "ex-prisoners-program",
@@ -30,7 +33,8 @@ const programs = [
     color: "bg-[#D7E6A4]",
     textColor: "text-[#32431B]",
     description: "We support reintegration through counseling, discipleship, employability training, and practical support as former prisoners rebuild their lives.",
-    stats: ["260 Lives Restored", "140 Job Placements", "45 Small Businesses Started"]
+    stats: ["260 Lives Restored", "140 Job Placements", "45 Small Businesses Started"],
+    image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c63c52cf9/preview?project=697cce240018e094963c&output=webp"
   },
   {
     id: "leadership-development",
@@ -39,7 +43,8 @@ const programs = [
     color: "bg-[#D8D7E5]",
     textColor: "text-[#44436B]",
     description: "We equip youth and community leaders with communication, planning, and service-oriented leadership skills for long-term transformation.",
-    stats: ["500+ Leaders Trained", "18 Leadership Cohorts", "60 Community Projects Led"]
+    stats: ["500+ Leaders Trained", "18 Leadership Cohorts", "60 Community Projects Led"],
+    image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c67cd1301/preview?project=697cce240018e094963c&output=webp"
   },
   {
     id: "community-empowerment",
@@ -48,7 +53,8 @@ const programs = [
     color: "bg-[#DCE8DF]",
     textColor: "text-[#32431B]",
     description: "Families receive practical support through vocational training, savings groups, and economic empowerment pathways.",
-    stats: ["1,200 Households Supported", "300 Start-up Grants", "15 Active Savings Groups"]
+    stats: ["1,200 Households Supported", "300 Start-up Grants", "15 Active Savings Groups"],
+    image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c67142854/preview?project=697cce240018e094963c&output=webp"
   }
 ];
 
@@ -82,11 +88,23 @@ export default function ProgramsPage() {
           >
             {/* Visual Box */}
             <div className={`w-full md:w-1/2 aspect-square md:aspect-[4/3] rounded-[2rem] ${program.color} relative overflow-hidden flex items-center justify-center p-12`}>
-               <program.icon className={`w-32 h-32 ${program.textColor} opacity-20 absolute`} />
-               <div className="relative z-10 text-center">
-                 <p className="text-[#202612] font-serif text-2xl mb-4 italic">Spotlight</p>
-                 <span className="text-[#202612]/50 text-sm tracking-widest uppercase">Image Placeholder</span>
-               </div>
+              {program.image ? (
+                <Image
+                  src={program.image}
+                  alt={program.title}
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
+              ) : (
+                <>
+                  <program.icon className={`w-32 h-32 ${program.textColor} opacity-20 absolute`} />
+                  <div className="relative z-10 text-center">
+                    <p className="text-[#202612] font-serif text-2xl mb-4 italic">Spotlight</p>
+                    <span className="text-[#202612]/50 text-sm tracking-widest uppercase">Image Placeholder</span>
+                  </div>
+                </>
+              )}
             </div>
 
             {/* Content */}

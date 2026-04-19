@@ -47,7 +47,7 @@ export default function DonatePage() {
           className="bg-white rounded-[2rem] border border-[#E8E0CF] p-8 md:p-10 shadow-sm"
         >
           <span className="inline-block py-1 px-3 rounded-full border border-[#B7D74A] bg-[#F8FAEE] text-[#5B6E27] text-sm font-medium tracking-wide uppercase mb-4">
-            Support Bless to Bless Rehabilitation Center
+            Support Blessed To Bless Rehabilitation Center
           </span>
 
           <h1 className="text-4xl md:text-5xl font-serif text-[#202612] mb-4">

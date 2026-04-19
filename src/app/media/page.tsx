@@ -2,7 +2,15 @@
 
 import { motion } from "framer-motion";
 import TextReveal from "@/components/TextReveal";
-import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react";
+
+function XIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
+      <path d="M18.9 2H21l-7.3 8.38L22 22h-6.7l-5.2-6.44L4.5 22H2.4l7.8-8.95L2 2h6.9l4.7 5.84L18.9 2zm-1.17 18h1.86L7.93 3.94H5.94L17.73 20z" />
+    </svg>
+  );
+}
 
 const socialPlatforms = [
   {
@@ -20,7 +28,7 @@ const socialPlatforms = [
   {
     name: "X",
     href: "https://x.com/B2BRehab",
-    icon: Twitter,
+    icon: XIcon,
     bg: "bg-[#CFE36E]",
   },
   {
@@ -116,13 +124,12 @@ export default function GalleryPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.06, duration: 0.4 }}
-                  className={`rounded-2xl ${social.bg} border border-[#B7D74A] p-5 hover:border-[#C5352F] transition-colors group`}
+                  aria-label={`Visit our ${social.name} page`}
+                  className={`rounded-2xl ${social.bg} border border-[#B7D74A] p-5 hover:border-[#C5352F] transition-colors group flex items-center justify-center aspect-square`}
                 >
-                  <div className="w-10 h-10 rounded-full bg-white/70 flex items-center justify-center text-[#32431B] mb-3 group-hover:text-[#C5352F] transition-colors">
+                  <div className="w-12 h-12 rounded-full bg-white/70 flex items-center justify-center text-[#32431B] group-hover:text-[#C5352F] transition-colors">
                     <Icon size={20} />
                   </div>
-                  <h3 className="text-xl font-serif text-[#202612]">{social.name}</h3>
-                  <p className="text-sm text-[#202612]/70 font-light mt-1">Visit channel</p>
                 </motion.a>
               );
             })}

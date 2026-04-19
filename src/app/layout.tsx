@@ -19,12 +19,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteTitle = "Bless to Bless Rehabilitation Center";
+const siteTitle = "Blessed To Bless Rehabilitation Center";
 const siteDescription = "Serving Buyala with compassion and purpose.";
 
 export const metadata: Metadata = {
   title: siteTitle,
   description: siteDescription,
+  icons: {
+    icon: '/favicon.png',
+  },
   openGraph: {
     title: siteTitle,
     description: siteDescription,

@@ -10,9 +10,16 @@ import {
   Mail,
   MapPin,
   Phone,
-  Twitter,
   Youtube,
 } from "lucide-react";
+
+function XIcon({ size = 15 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
+      <path d="M18.9 2H21l-7.3 8.38L22 22h-6.7l-5.2-6.44L4.5 22H2.4l7.8-8.95L2 2h6.9l4.7 5.84L18.9 2zm-1.17 18h1.86L7.93 3.94H5.94L17.73 20z" />
+    </svg>
+  );
+}
 
 const socialLinks = [
   {
@@ -28,7 +35,7 @@ const socialLinks = [
   {
     name: "X",
     href: "https://x.com/B2BRehab",
-    icon: Twitter,
+    icon: XIcon,
   },
   {
     name: "LinkedIn",
@@ -128,10 +135,9 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visit our ${social.name} page`}
-                    className="inline-flex items-center gap-2 rounded-full border border-[#5B7330] bg-[#243513]/80 px-4 py-2 text-sm text-[#F8FAEE]/90 hover:border-[#CFE36E] hover:text-[#CFE36E] transition-colors"
+                    className="inline-flex items-center justify-center rounded-full border border-[#5B7330] bg-[#243513]/80 p-3 text-[#F8FAEE]/90 hover:border-[#CFE36E] hover:text-[#CFE36E] transition-colors"
                   >
-                    <Icon size={15} />
-                    <span>{social.name}</span>
+                    <Icon size={16} />
                   </a>
                 );
               })}
@@ -141,7 +147,7 @@ export default function Footer() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 border-t border-[#5B7330]/30 flex flex-col md:flex-row justify-between items-center text-[#F8FAEE]/50 text-sm font-light">
-        <p>&copy; {new Date().getFullYear()} Bless to Bless Rehabilitation Center. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Blessed To Bless Rehabilitation Center. All rights reserved.</p>
         <div className="flex items-center gap-6 mt-4 md:mt-0">
           <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
