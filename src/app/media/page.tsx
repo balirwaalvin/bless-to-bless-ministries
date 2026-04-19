@@ -157,10 +157,10 @@ export default function GalleryPage() {
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.06, duration: 0.4 }}
                   aria-label={`Visit our ${social.name} page`}
-                  className={`rounded-2xl ${social.bg} border border-[#B7D74A] p-5 hover:border-[#C5352F] transition-colors group flex items-center justify-center aspect-square`}
+                  className={`rounded-2xl ${social.bg} border border-[#B7D74A] p-8 hover:border-[#C5352F] transition-colors group flex items-center justify-center aspect-square`}
                 >
-                  <div className="w-12 h-12 rounded-full bg-white/70 flex items-center justify-center text-[#32431B] group-hover:text-[#C5352F] transition-colors">
-                    <Icon size={20} />
+                  <div className="w-20 h-20 rounded-full bg-white/70 flex items-center justify-center text-[#32431B] group-hover:text-[#C5352F] transition-colors">
+                    <Icon size={36} />
                   </div>
                 </motion.a>
               );
