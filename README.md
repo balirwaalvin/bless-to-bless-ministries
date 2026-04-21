@@ -53,6 +53,8 @@ For an App Platform Static Site deployment:
 - Build Command: `npm install && npm run build`
 - Output Directory: `out`
 
+If your deployment is configured from the monorepo root, point the source directory at `site` so the generated `out/` folder is published correctly.
+
 If you deploy from inside the `site` folder directly, omit the Source Directory value.
 
 ## Appwrite Deployment Notes
