@@ -1,0 +1,15 @@
+spec:
+  name: bless-to-bless-ministries
+  static_sites:
+    - name: bless-to-bless-ministries
+      github:
+        repo: balirwaalvin/bless-to-bless-ministries
+        branch: main
+        deploy_on_push: true
+      source_dir: site
+      build_command: npm install && npm run build
+      output_dir: out
+      index_document: index.html
+      error_document: 404.html
+      catchall_document: index.html
+      environment_slug: html

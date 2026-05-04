@@ -1,0 +1,157 @@
+"use client";
+
+import { useTranslations } from 'next-intl';
+import Link from 'next/link';
+import Image from "next/image";
+import {
+  Facebook,
+  HeartHandshake,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Youtube,
+} from "lucide-react";
+
+function XIcon({ size = 15 }: { size?: number }) {
+  return (
+    <svg viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
+      <path d="M18.9 2H21l-7.3 8.38L22 22h-6.7l-5.2-6.44L4.5 22H2.4l7.8-8.95L2 2h6.9l4.7 5.84L18.9 2zm-1.17 18h1.86L7.93 3.94H5.94L17.73 20z" />
+    </svg>
+  );
+}
+
+const socialLinks = [
+  {
+    name: "Facebook",
+    href: "https://www.facebook.com/profile.php?id=61569218362710",
+    icon: Facebook,
+  },
+  {
+    name: "YouTube",
+    href: "https://youtube.com/@blessedtoblessuganda?si=2AHa05UZoGMqvDip",
+    icon: Youtube,
+  },
+  {
+    name: "X",
+    href: "https://x.com/B2BRehab",
+    icon: XIcon,
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/blessedto-blessug-a83631403",
+    icon: Linkedin,
+  },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/blessedtoblessug/",
+    icon: Instagram,
+  },
+];
+
+export default function Footer() {
+  const t = useTranslations('Footer');
+  const tNav = useTranslations('Navigation');
+  return (
+    <footer className="bg-[linear-gradient(165deg,#1F2C12_0%,#243513_40%,#1A2610_100%)] text-[#F8FAEE] pt-20 pb-10 border-t border-[#5B7330]/30 mt-auto">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+        
+        {/* Brand & Mission */}
+        <div className="md:col-span-1">
+          <Link href="/" className="mb-6 inline-block group">
+            <Image
+              src="/brand/logo.png"
+              alt="Blessed to Bless Rehabilitation Centre Uganda logo"
+              width={420}
+              height={120}
+              className="h-16 w-auto object-contain rounded-md"
+            />
+          </Link>
+          <p className="text-[#F8FAEE]/70 font-light leading-relaxed mb-6">
+            {t('mission')}
+          </p>
+          <Link href="/donate" className="inline-flex items-center gap-2 text-[#CFE36E] hover:text-[#F8FAEE] font-medium transition-colors">
+            {t('supportMission')} <HeartHandshake size={18} />
+          </Link>
+        </div>
+
+        {/* Quick Links */}
+        <div>
+          <h4 className="font-serif text-xl text-[#CFE36E] mb-6">{t('navigation')}</h4>
+          <ul className="flex flex-col gap-4 font-light text-[#F8FAEE]/80">
+            <li><Link href="/" className="hover:text-white transition-colors">{tNav('home')}</Link></li>
+            <li><Link href="/about" className="hover:text-white transition-colors">{tNav('about')}</Link></li>
+            <li><Link href="/programs" className="hover:text-white transition-colors">{tNav('programs')}</Link></li>
+            <li><Link href="/team" className="hover:text-white transition-colors">{tNav('team')}</Link></li>
+            <li><Link href="/children-profiles" className="hover:text-white transition-colors">{tNav('children')}</Link></li>
+            <li><Link href="/impact" className="hover:text-white transition-colors">{tNav('impact')}</Link></li>
+            <li><Link href="/contact" className="hover:text-white transition-colors">{tNav('contact')}</Link></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h4 className="font-serif text-xl text-[#CFE36E] mb-6">{t('contactUs')}</h4>
+          <ul className="flex flex-col gap-4 font-light text-[#F8FAEE]/80">
+            <li className="flex items-start gap-3">
+              <MapPin size={18} className="text-[#C5352F] mt-1 shrink-0" />
+              <span dangerouslySetInnerHTML={{ __html: t('address') }}></span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Phone size={18} className="text-[#C5352F] shrink-0" />
+              <span>{t('phone')}</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Mail size={18} className="text-[#C5352F] shrink-0" />
+              <span>{t('email')}</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Newsletter */}
+        <div>
+          <h4 className="font-serif text-xl text-[#CFE36E] mb-6">{t('newsletter')}</h4>
+          <p className="text-[#F8FAEE]/70 font-light mb-4">
+            {t('subscribeDesc')}
+          </p>
+          <form className="flex flex-col gap-3" onSubmit={(e) => e.preventDefault()}>
+            <input 
+              type="email" 
+              placeholder={t('emailPlaceholder')} 
+              className="px-4 py-3 rounded-md bg-[#5B7330]/30 border border-[#5B7330] focus:outline-none focus:border-[#CFE36E] text-[#F8FAEE] placeholder-[#F8FAEE]/40 transition-colors"
+            />
+            <button className="px-4 py-3 bg-[#C5352F] hover:bg-[#8F241F] text-white rounded-md font-medium transition-colors">
+              {t('subscribe')}
+            </button>
+          </form>
+
+          <div className="mt-8">
+            <h5 className="font-serif text-lg text-[#CFE36E] mb-4">{t('followUs')}</h5>
+            <div className="flex flex-wrap gap-3">
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+                return (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Visit our ${social.name} page`}
+                    className="inline-flex items-center justify-center rounded-full border border-[#5B7330] bg-[#243513]/80 p-3 text-[#F8FAEE]/90 hover:border-[#CFE36E] hover:text-[#CFE36E] transition-colors"
+                  >
+                    <Icon size={16} />
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 border-t border-[#5B7330]/30 flex flex-col md:flex-row justify-between items-center text-[#F8FAEE]/50 text-sm font-light">
+        <p>&copy; {new Date().getFullYear()} {t('allRightsReserved')}</p>
+      </div>
+    </footer>
+  );
+}

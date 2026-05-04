@@ -1,0 +1,111 @@
+{
+  "Navigation": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "programs": "Programme",
+    "impact": "Wirkung",
+    "children": "Kinder",
+    "team": "Team",
+    "media": "Medien",
+    "contact": "Kontakt",
+    "donate": "Spenden",
+    "getInvolved": "Mitmachen"
+  },
+  "Home": {
+    "heroTitle1": "Leben stärken.",
+    "heroTitle2": "Hoffnung wecken.",
+    "heroSubtitle": "Buyala mit Mitgefühl und Sinn dienen.",
+    "donateNow": "Jetzt Spenden",
+    "discoverOurPrograms": "Entdecke unsere Programme",
+    "scroll": "Scrollen"
+  },
+  "Footer": {
+    "mission": "Wir stärken Leben und wecken Hoffnung durch Bildung, Gemeinschaftsaufbau und wohltätige Hilfe.",
+    "supportMission": "Unterstützen Sie unsere Mission",
+    "navigation": "Navigation",
+    "contactUs": "Kontaktiere uns",
+    "address": "Kampala, Uganda<br/>Postfach 12345",
+    "phone": "+256 700 000 000",
+    "email": "hello@blesstobless.org",
+    "newsletter": "Newsletter",
+    "subscribeDesc": "Abonnieren Sie, um Updates zu unseren Programmen und unserer Wirkung zu erhalten.",
+    "emailPlaceholder": "Ihre E-Mail-Adresse",
+    "subscribe": "Abonnieren",
+    "followUs": "Folgen Sie uns",
+    "allRightsReserved": "Blessed To Bless Rehabilitation Center. Alle Rechte vorbehalten."
+  },
+  "ProgramsPage": {
+    "title1": "Unsere",
+    "title2": "Programme",
+    "subtitle": "Gezielte Initiativen zur Durchbrechung des Armutskreislaufs und zur ganzheitlichen Transformation bedürftiger Gemeinschaften.",
+    "spotlight": "Im Fokus",
+    "placeholder": "Bildplatzhalter",
+    "programs": {
+      "sponsorship": {
+        "title": "Patenschaftsprogramm",
+        "description": "Bildungsunterstützung, Schulgebühren und Grundbedürfnisse für gefährdete Kinder, um ihren Schulbesuch zu sichern.",
+        "stats": ["Mehrere Kinder gefördert", "Ganzheitliche Unterstützung"]
+      },
+      "luminaSchool": {
+        "title": "Lumina Junior School",
+        "description": "Unser grundlegendes Bildungszentrum, das junge Köpfe mit qualitativ hochwertiger Bildung und moralischer Führung fördert.",
+        "stats": ["Hochwertiger Lehrplan", "Engagiertes Personal"]
+      },
+      "agriculture": {
+        "title": "Landwirtschaft & Wertschöpfung",
+        "description": "Wir befähigen Gemeinschaften mit modernen Anbaumethoden, um Ernährungssicherheit und wirtschaftliche Stabilität zu erreichen.",
+        "stats": ["Landwirtschafts-Workshops", "Nachhaltige Praktiken"]
+      },
+      "exPrisoners": {
+        "title": "Programm für Ex-Häftlinge",
+        "description": "Wir unterstützen die Wiedereingliederung durch Beratung, Jüngerschaft, Berufstraining und praktische Hilfe für ehemalige Häftlinge.",
+        "stats": ["260 Leben wiederhergestellt", "140 Arbeitsvermittlungen", "45 Kleinunternehmen gegründet"]
+      },
+      "teenageGirls": {
+        "title": "Engagement für Teenager-Mädchen",
+        "description": "Ein sicheres und glaubensorientiertes Programm, das Selbstvertrauen, Würde, Gesundheitsbewusstsein und Führungsqualitäten bei Mädchen fördert.",
+        "stats": ["Über 900 Mädchen betreut", "22 Mentoring-Gruppen", "80 Pflegepakete verteilt"]
+      },
+      "leadership": {
+        "title": "Stärkung von Führungskompetenzen",
+        "description": "Wir statten Jugendliche und Gemeindeleiter mit Kommunikations-, Planungs- und serviceorientierten Führungsfähigkeiten aus.",
+        "stats": ["Über 500 Leiter ausgebildet", "18 Führungskohorten", "60 geleitete Gemeindeprojekte"]
+      },
+      "communityOutreaches": {
+        "title": "Gemeindebesuche",
+        "description": "Familien erhalten praktische Unterstützung durch Berufstraining, Spargruppen und wirtschaftliche Förderprogramme.",
+        "stats": ["1.200 Haushalte unterstützt", "300 Gründerzuschüsse", "15 aktive Spargruppen"]
+      },
+      "schoolOutreaches": {
+        "title": "Schulbesuche",
+        "description": "Wir arbeiten mit Schulen zusammen, um Lehrmaterialien, Mentoring-Besuche und Lebenskompetenz-Sitzungen anzubieten.",
+        "stats": ["35 Partnerschulen", "Über 4.800 Schüler erreicht", "120 Schulbesuche"]
+      },
+      "discipleship": {
+        "title": "Jüngerschaftstraining",
+        "description": "Vertiefung des Glaubens und Charakterbildung durch kontinuierliche spirituelle Bildung und Mentoring.",
+        "stats": ["Spirituelles Wachstum", "Gemeindegruppen"]
+      },
+      "elderlyFood": {
+        "title": "Lebensmittelhilfe für ältere Menschen",
+        "description": "Bereitstellung wesentlicher Ernährungsunterstützung und Pflegepakete für gefährdete ältere Menschen in unseren Gemeinschaften.",
+        "stats": ["Monatliche Lebensmittelaktionen", "Pflege & Gesellschaft"]
+      },
+      "parentsLivelihood": {
+        "title": "Lebensunterhalt der Eltern",
+        "description": "Befähigung von Eltern durch finanzielle Bildung und Starthilfe, um ihre Familien zu versorgen.",
+        "stats": ["Finanzielle Unabhängigkeit", "Familienstabilität"]
+      },
+      "workspaces": {
+        "title": "Schaffung von Arbeitsräumen",
+        "description": "Aufbau von kollaborativen Umgebungen und Berufszentren zur Förderung der Kompetenzentwicklung.",
+        "stats": ["Kompetenztraining", "Inkubation von Unternehmen"]
+      },
+      "medical": {
+        "title": "Medizinisches Unterstützungsprogramm",
+        "description": "Gesundheitsaufklärung, medizinische Camps und Gesundheitsfinanzierung für Familien ohne regelmäßigen Zugang zu Behandlungen.",
+        "stats": ["Gesundheitscamps", "Notfallhilfe"]
+      }
+    }
+  }
+}

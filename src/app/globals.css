@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8faee;
+  --foreground: #202612;
+  --brand-olive: #32431b;
+  --brand-leaf: #b7d74a;
+  --brand-lime: #cfe36e;
+  --brand-red: #c5352f;
+  --brand-red-deep: #8f241f;
+  --brand-card: #e7f0b8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-barlow);
+  --font-serif: var(--font-barlow);
+}
+
+/* Disabled automatic dark mode to preserve the warm earthy palette and prevent invisible text */
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #202612;
+    --foreground: #F8FAEE;
+  }
+}
+*/
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-barlow), "Segoe UI", sans-serif;
+  position: relative;
+  isolation: isolate;
+}
+
+.route-sweep {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20vw;
+  min-width: 140px;
+  max-width: 280px;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 70;
+  background: linear-gradient(90deg, transparent 0%, rgba(183, 215, 74, 0.24) 45%, rgba(197, 53, 47, 0.18) 65%, transparent 100%);
+  mix-blend-mode: multiply;
+}
+
+.app-ambient {
+  position: relative;
+  overflow-x: clip;
+}
+
+.app-ambient::before,
+.app-ambient::after {
+  content: "";
+  position: fixed;
+  width: 42rem;
+  height: 42rem;
+  border-radius: 9999px;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(120px);
+  opacity: 0.25;
+}
+
+.app-ambient::before {
+  background: radial-gradient(circle, rgba(207, 227, 110, 0.9) 0%, transparent 62%);
+  top: -12rem;
+  right: -12rem;
+  animation: ambientFloatA 22s ease-in-out infinite;
+}
+
+.app-ambient::after {
+  background: radial-gradient(circle, rgba(197, 53, 47, 0.75) 0%, transparent 64%);
+  bottom: -16rem;
+  left: -14rem;
+  animation: ambientFloatB 26s ease-in-out infinite;
+}
+
+.route-transition h1,
+.route-transition h2,
+.route-transition [data-animated-text="true"] {
+  animation: textRise 0.8s ease-out both;
+}
+
+.route-transition p,
+.route-transition li,
+.route-transition [data-animated-copy="true"] {
+  animation: textFade 0.9s ease-out both;
+}
+
+.route-transition h1 {
+  animation-delay: 0.1s;
+}
+
+.route-transition h2,
+.route-transition p {
+  animation-delay: 0.16s;
+}
+
+.route-transition li {
+  animation-delay: 0.2s;
+}
+
+@keyframes ambientFloatA {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-28px, 16px, 0) scale(1.08);
+  }
+}
+
+@keyframes ambientFloatB {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(24px, -18px, 0) scale(1.06);
+  }
+}
+
+@keyframes textRise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    letter-spacing: 0.02em;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 0;
+  }
+}
+
+@keyframes textFade {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kinetic-label {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.kinetic-label::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  bottom: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c5352f, transparent);
+  transform: translateX(-50%);
+  animation: kineticUnderline 2.4s ease-in-out infinite;
+}
+
+.orbital-float {
+  animation: orbitalFloat 8s ease-in-out infinite;
+}
+
+@keyframes kineticUnderline {
+  0%,
+  100% {
+    transform: translateX(-70%);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translateX(70%);
+    opacity: 0.9;
+  }
+}
+
+@keyframes orbitalFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-ambient::before,
+  .app-ambient::after,
+  .route-transition h1,
+  .route-transition h2,
+  .route-transition p,
+  .route-transition li,
+  .route-transition [data-animated-text="true"],
+  .route-transition [data-animated-copy="true"] {
+    animation: none !important;
+  }
+
+  .route-sweep,
+  .kinetic-label::after,
+  .orbital-float {
+    animation: none !important;
+  }
+}
