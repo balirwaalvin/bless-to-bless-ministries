@@ -55,6 +55,13 @@ const ugandanTeam: TeamMember[] = [
 
 const globalTeam: TeamMember[] = [
   {
+    name: "Reiner & Hildegard Schowalter",
+    role: "Founders",
+    initials: "RS",
+    bio: "The visionary founders behind Blessed To Bless Ministries.",
+    image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69fdc3ad0007e5b2e750/files/69fdc3c1003cebaaa896/view?project=69f8b24a003c5558181b&mode=admin",
+  },
+  {
     name: "Paris Parie",
     role: "International Coordinator",
     initials: "JD",

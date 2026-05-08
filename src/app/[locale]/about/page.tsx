@@ -66,6 +66,44 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Founders Section */}
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-32">
+        <div className="flex flex-col md:flex-row items-center gap-12 bg-white rounded-[3rem] p-10 border border-[#E8E0CF] shadow-sm">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2 aspect-square md:aspect-[4/3] relative rounded-[2rem] overflow-hidden shadow-sm shrink-0"
+          >
+            <Image
+              src="https://fra.cloud.appwrite.io/v1/storage/buckets/69fdc3ad0007e5b2e750/files/69fdc3c1003cebaaa896/view?project=69f8b24a003c5558181b&mode=admin"
+              alt="Reiner and Hildegard Schowalter"
+              fill
+              className="object-cover"
+              unoptimized
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="w-full md:w-1/2 flex flex-col justify-center"
+          >
+            <h2 className="text-[#5B6E27] tracking-widest uppercase text-sm font-semibold mb-3">Our Founders</h2>
+            <h3 className="text-4xl md:text-5xl font-serif text-[#202612] mb-6 leading-tight">
+              Reiner & Hildegard <span className="italic text-[#C5352F]">Schowalter</span>
+            </h3>
+            <p className="text-lg text-[#202612]/70 font-light leading-relaxed mb-6">
+              Driven by a profound calling to serve the vulnerable, Reiner and Hildegard laid the foundational vision for Blessed To Bless Ministries. Their journey is marked by an unwavering commitment to bridging the gap between those who want to help and those who desperately need it.
+            </p>
+            <p className="text-lg text-[#202612]/70 font-light leading-relaxed">
+              Through their dedicated global outreach and compassionate leadership, they have inspired countless individuals to join hands in transforming lives, providing sustainable education, and restoring hope to communities in Buyala and beyond.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       {/* History Timeline placeholder */}
       <section className="bg-[#EDF3CD] py-24 mb-32">
         <div className="max-w-3xl mx-auto px-6 lg:px-12 text-center">
