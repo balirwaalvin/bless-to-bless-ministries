@@ -188,5 +188,12 @@
         ]
       }
     }
+  },
+  "Team": {
+    "titleStart": "Unser",
+    "titleEnd": "Team",
+    "description": "Die Mitarbeiter, die durch das Blessed To Bless Rehabilitationszentrum mit Mitgefühl, Verantwortlichkeit und Zielstrebigkeit dienen.",
+    "placeholderNote": "Temporäre Profilfotos als Platzhalter",
+    "comingSoon": "Globale Teammitglieder werden bald bekannt gegeben."
   }
 }

@@ -188,5 +188,12 @@
         ]
       }
     }
+  },
+  "Team": {
+    "titleStart": "Meet Our",
+    "titleEnd": "Team",
+    "description": "The staff serving through Blessed To Bless Rehabilitation Center with compassion, accountability, and purpose.",
+    "placeholderNote": "Temporary profile photos shown as placeholders",
+    "comingSoon": "Global team members to be announced soon."
   }
 }
