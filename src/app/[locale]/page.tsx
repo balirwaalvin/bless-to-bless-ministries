@@ -206,54 +206,54 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-serif text-[#202612] mb-4 kinetic-label">Take Action Today</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-[#202612] mb-4 kinetic-label">{t('takeActionToday')}</h2>
             <p className="text-[#202612]/70 max-w-3xl text-lg font-light leading-relaxed">
-              Join our mission through giving, partnership, communication, and media engagement. Every action strengthens our impact in Buyala.
+              {t('takeActionDesc')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                title: "Donate Now",
-                desc: "Give one-time or recurring support: daily, weekly, monthly, or yearly.",
+                title: t('actionDonateTitle'),
+                desc: t('actionDonateDesc'),
                 href: "/get-involved#donate",
-                cta: "Start Giving",
+                cta: t('actionDonateCta'),
                 icon: HandCoins,
               },
               {
-                title: "Become a Partner",
-                desc: "Partner with us as an individual, church, NGO, or business.",
+                title: t('actionPartnerTitle'),
+                desc: t('actionPartnerDesc'),
                 href: "/get-involved#partner",
-                cta: "Partner With Us",
+                cta: t('actionPartnerCta'),
                 icon: Handshake,
               },
               {
-                title: "Subscribe to Newsletter",
-                desc: "Receive updates, stories, and progress from our ongoing work.",
+                title: t('actionSubscribeTitle'),
+                desc: t('actionSubscribeDesc'),
                 href: "/contact",
-                cta: "Subscribe",
+                cta: t('actionSubscribeCta'),
                 icon: Mail,
               },
               {
-                title: "Get in Contact",
-                desc: "Reach out for collaboration, support questions, or ministry inquiries.",
+                title: t('actionContactTitle'),
+                desc: t('actionContactDesc'),
                 href: "/contact",
-                cta: "Contact Us",
+                cta: t('actionContactCta'),
                 icon: MessageSquareText,
               },
               {
-                title: "Sponsor a Project",
-                desc: "Engage directly in a project through sponsorship, volunteering, or donation.",
+                title: t('actionSponsorTitle'),
+                desc: t('actionSponsorDesc'),
                 href: "/get-involved#sponsor",
-                cta: "View Opportunities",
+                cta: t('actionSponsorCta'),
                 icon: BriefcaseBusiness,
               },
               {
-                title: "See Media & Videos",
-                desc: "Follow social updates and video clips to witness impact on the ground.",
+                title: t('actionMediaTitle'),
+                desc: t('actionMediaDesc'),
                 href: "/media",
-                cta: "Explore Media",
+                cta: t('actionMediaCta'),
                 icon: Clapperboard,
               },
             ].map((action, idx) => {
@@ -299,21 +299,21 @@ export default function Home() {
             <motion.div variants={fadeInUp} className="py-10 md:py-0 md:pr-12 md:pl-0 flex flex-col items-start">
               <BookOpen className="w-10 h-10 text-[#B7D74A] mb-6 opacity-90" />
               <h3 className="text-5xl lg:text-6xl font-serif mb-3">5,000<span className="text-[#B7D74A]">+</span></h3>
-              <p className="text-[#F8FAEE]/70 font-light tracking-wide text-lg">Students Educated</p>
+              <p className="text-[#F8FAEE]/70 font-light tracking-wide text-lg">{t('statStudents')}</p>
             </motion.div>
 
             {/* Stat 2 */}
             <motion.div variants={fadeInUp} className="py-10 md:py-0 md:px-12 flex flex-col items-start">
               <Users className="w-10 h-10 text-[#CFE36E] mb-6 opacity-90" />
               <h3 className="text-5xl lg:text-6xl font-serif mb-3">10k<span className="text-[#CFE36E]">+</span></h3>
-              <p className="text-[#F8FAEE]/70 font-light tracking-wide text-lg">Lives Empowered</p>
+              <p className="text-[#F8FAEE]/70 font-light tracking-wide text-lg">{t('statLives')}</p>
             </motion.div>
 
             {/* Stat 3 */}
             <motion.div variants={fadeInUp} className="py-10 md:py-0 md:pl-12 flex flex-col items-start">
               <Globe2 className="w-10 h-10 text-[#E7F0B8] mb-6 opacity-90" />
               <h3 className="text-5xl lg:text-6xl font-serif mb-3">30<span className="text-[#E7F0B8]">+</span></h3>
-              <p className="text-[#F8FAEE]/70 font-light tracking-wide text-lg">Outreach Programs</p>
+              <p className="text-[#F8FAEE]/70 font-light tracking-wide text-lg">{t('statPrograms')}</p>
             </motion.div>
           </motion.div>
         </div>
@@ -332,36 +332,36 @@ export default function Home() {
           >
             <div>
               <h2 className="text-4xl md:text-6xl font-serif tracking-tight text-[#202612] mb-4">
-                Our Core Initiatives
+                {t('coreInitiativesTitle')}
               </h2>
               <p className="text-[#202612]/70 max-w-md text-lg font-light">
-                Creating sustainable change through targeted programs designed to uplift and equip individuals.
+                {t('coreInitiativesDesc')}
               </p>
             </div>
             <Link href="/programs" className="text-[#C5352F] font-medium hover:text-[#8F241F] flex items-center gap-2 pb-2">
-              View All Initiatives <ArrowRight size={18} />
+              {t('viewAllInitiatives')} <ArrowRight size={18} />
             </Link>
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
             {[
               {
-                title: "School Outreach",
-                desc: "Providing scholastic materials, mentorship sessions, and practical support for learners and schools.",
+                title: t('programSchoolTitle'),
+                desc: t('programSchoolDesc'),
                 route: "/programs",
                 color: "bg-[#E7F0B8]",
                 image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c69db647c/preview?project=697cce240018e094963c&output=webp"
               },
               {
-                title: "Girls' Ministry",
-                desc: "Building confidence and purpose through mentorship, discipleship, and life-skills support.",
+                title: t('programGirlsTitle'),
+                desc: t('programGirlsDesc'),
                 route: "/programs",
                 color: "bg-[#CFE36E]",
                 image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c697644d1/preview?project=697cce240018e094963c&output=webp"
               },
               {
-                title: "Ex-Prisoners Program",
-                desc: "Helping former prisoners reintegrate through counseling, skills training, and practical support.",
+                title: t('programPrisonsTitle'),
+                desc: t('programPrisonsDesc'),
                 route: "/programs",
                 color: "bg-[#D7E6A4]",
                 image: "https://fra.cloud.appwrite.io/v1/storage/buckets/69e0ef48000b84bb12f1/files/69e49a1b000c63c52cf9/preview?project=697cce240018e094963c&output=webp"
@@ -418,17 +418,17 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl md:text-6xl font-serif text-[#202612] mb-6">
-              Your generosity <span className="italic text-[#C5352F]">creates miracles.</span>
+              {t('donationCtaTitle1')} <span className="italic text-[#C5352F]">{t('donationCtaTitleMiracles')}</span>
             </h2>
             <p className="text-xl text-[#202612]/80 font-light mb-10 max-w-2xl mx-auto">
-              Every donation goes directly towards putting a child in school, feeding a family, and providing essential crisis relief.
+              {t('donationCtaDesc')}
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/donate" className="px-8 py-4 bg-[#202612] text-[#F8FAEE] rounded-full font-medium hover:bg-[#32431B] transition-colors shadow-lg">
-                Make a Donation
+                {t('makeDonation')}
               </Link>
               <Link href="/get-involved" className="px-8 py-4 bg-transparent border border-[#202612] text-[#202612] rounded-full font-medium hover:bg-[#202612] hover:text-[#F8FAEE] transition-colors">
-                Become a Volunteer
+                {t('becomeVolunteer')}
               </Link>
             </div>
           </motion.div>

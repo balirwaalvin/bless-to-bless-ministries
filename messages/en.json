@@ -17,7 +17,44 @@
     "heroSubtitle": "Serving Buyala with compassion and purpose.",
     "donateNow": "Donate Now",
     "discoverOurPrograms": "Discover Our Programs",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "takeActionToday": "Take Action Today",
+    "takeActionDesc": "Join our mission through giving, partnership, communication, and media engagement. Every action strengthens our impact in Buyala.",
+    "actionDonateTitle": "Donate Now",
+    "actionDonateDesc": "Give one-time or recurring support: daily, weekly, monthly, or yearly.",
+    "actionDonateCta": "Start Giving",
+    "actionPartnerTitle": "Become a Partner",
+    "actionPartnerDesc": "Partner with us as an individual, church, NGO, or business.",
+    "actionPartnerCta": "Partner With Us",
+    "actionSubscribeTitle": "Subscribe to Newsletter",
+    "actionSubscribeDesc": "Receive updates, stories, and progress from our ongoing work.",
+    "actionSubscribeCta": "Subscribe",
+    "actionContactTitle": "Get in Contact",
+    "actionContactDesc": "Reach out for collaboration, support questions, or ministry inquiries.",
+    "actionContactCta": "Contact Us",
+    "actionSponsorTitle": "Sponsor a Project",
+    "actionSponsorDesc": "Engage directly in a project through sponsorship, volunteering, or donation.",
+    "actionSponsorCta": "View Opportunities",
+    "actionMediaTitle": "See Media & Videos",
+    "actionMediaDesc": "Follow social updates and video clips to witness impact on the ground.",
+    "actionMediaCta": "Explore Media",
+    "statStudents": "Students Educated",
+    "statLives": "Lives Empowered",
+    "statPrograms": "Outreach Programs",
+    "coreInitiativesTitle": "Our Core Initiatives",
+    "coreInitiativesDesc": "Creating sustainable change through targeted programs designed to uplift and equip individuals.",
+    "viewAllInitiatives": "View All Initiatives",
+    "programSchoolTitle": "School Outreach",
+    "programSchoolDesc": "Providing scholastic materials, mentorship sessions, and practical support for learners and schools.",
+    "programGirlsTitle": "Girls Ministry",
+    "programGirlsDesc": "Building confidence and purpose through mentorship, discipleship, and life-skills support.",
+    "programPrisonsTitle": "Ex-Prisoners Program",
+    "programPrisonsDesc": "Helping former prisoners reintegrate through counseling, skills training, and practical support.",
+    "donationCtaTitle1": "Your generosity ",
+    "donationCtaTitleMiracles": "creates miracles.",
+    "donationCtaDesc": "Every donation goes directly towards putting a child in school, feeding a family, and providing essential crisis relief.",
+    "makeDonation": "Make a Donation",
+    "becomeVolunteer": "Become a Volunteer"
   },
   "Footer": {
     "mission": "Empowering lives and inspiring hope through education, community building, and charitable outreach.",
@@ -44,67 +81,111 @@
       "sponsorship": {
         "title": "Sponsorship Program",
         "description": "Providing educational support, fees, and essential needs for vulnerable children to ensure they stay in school.",
-        "stats": ["Multiple Children Sponsored", "Holistic Support Provided"]
+        "stats": [
+          "Multiple Children Sponsored",
+          "Holistic Support Provided"
+        ]
       },
       "luminaSchool": {
         "title": "Lumina Junior School",
         "description": "Our foundational education center nurturing young minds with quality education and moral guidance.",
-        "stats": ["Quality Curriculum", "Dedicated Staff"]
+        "stats": [
+          "Quality Curriculum",
+          "Dedicated Staff"
+        ]
       },
       "agriculture": {
         "title": "Agriculture & Value Addition",
         "description": "Empowering communities with modern farming techniques to achieve food security and economic stability.",
-        "stats": ["Farming Workshops", "Sustainable Practices"]
+        "stats": [
+          "Farming Workshops",
+          "Sustainable Practices"
+        ]
       },
       "exPrisoners": {
         "title": "Ex-Prisoners' Program",
         "description": "We support reintegration through counseling, discipleship, employability training, and practical support as former prisoners rebuild their lives.",
-        "stats": ["260 Lives Restored", "140 Job Placements", "45 Small Businesses Started"]
+        "stats": [
+          "260 Lives Restored",
+          "140 Job Placements",
+          "45 Small Businesses Started"
+        ]
       },
       "teenageGirls": {
         "title": "Teenage Girls’ Engagement",
         "description": "A safe and faith-centered program that nurtures confidence, dignity, health awareness, and leadership in girls across different age groups.",
-        "stats": ["900+ Girls Mentored", "22 Mentorship Groups", "80 Care Kits Distributed"]
+        "stats": [
+          "900+ Girls Mentored",
+          "22 Mentorship Groups",
+          "80 Care Kits Distributed"
+        ]
       },
       "leadership": {
         "title": "Leadership Empowerment",
         "description": "We equip youth and community leaders with communication, planning, and service-oriented leadership skills for long-term transformation.",
-        "stats": ["500+ Leaders Trained", "18 Leadership Cohorts", "60 Community Projects Led"]
+        "stats": [
+          "500+ Leaders Trained",
+          "18 Leadership Cohorts",
+          "60 Community Projects Led"
+        ]
       },
       "communityOutreaches": {
         "title": "Community Outreaches",
         "description": "Families receive practical support through vocational training, savings groups, and economic empowerment pathways.",
-        "stats": ["1,200 Households Supported", "300 Start-up Grants", "15 Active Savings Groups"]
+        "stats": [
+          "1,200 Households Supported",
+          "300 Start-up Grants",
+          "15 Active Savings Groups"
+        ]
       },
       "schoolOutreaches": {
         "title": "Schools Outreaches",
         "description": "We partner with schools to provide scholastic materials, mentorship visits, and life-skills sessions that keep learners motivated and in class.",
-        "stats": ["35 Partner Schools", "4,800+ Learners Reached", "120 School Visits"]
+        "stats": [
+          "35 Partner Schools",
+          "4,800+ Learners Reached",
+          "120 School Visits"
+        ]
       },
       "discipleship": {
         "title": "Discipleship Training",
         "description": "Deepening faith and building character through continuous spiritual education and mentorship.",
-        "stats": ["Spiritual Growth", "Community Groups"]
+        "stats": [
+          "Spiritual Growth",
+          "Community Groups"
+        ]
       },
       "elderlyFood": {
         "title": "Elderly Food Outreaches",
         "description": "Providing essential nutritional support and care packages to the vulnerable elderly in our communities.",
-        "stats": ["Monthly Food Drives", "Care & Companionship"]
+        "stats": [
+          "Monthly Food Drives",
+          "Care & Companionship"
+        ]
       },
       "parentsLivelihood": {
         "title": "Parents' Livelihood",
         "description": "Equipping parents through financial literacy and start-up support to sustain their families.",
-        "stats": ["Financial Independence", "Family Stability"]
+        "stats": [
+          "Financial Independence",
+          "Family Stability"
+        ]
       },
       "workspaces": {
         "title": "Creation of Workspaces",
         "description": "Setting up collaborative environments and vocational centers to foster skill development and business incubation.",
-        "stats": ["Skill Training", "Business Incubation"]
+        "stats": [
+          "Skill Training",
+          "Business Incubation"
+        ]
       },
       "medical": {
         "title": "Medical Support Program",
         "description": "Offering health outreach, medical camps, and essential healthcare funding for families without regular access to treatment.",
-        "stats": ["Health Camps", "Emergency Support"]
+        "stats": [
+          "Health Camps",
+          "Emergency Support"
+        ]
       }
     }
   }

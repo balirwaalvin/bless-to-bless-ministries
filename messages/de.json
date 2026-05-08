@@ -17,7 +17,44 @@
     "heroSubtitle": "Buyala mit Mitgefühl und Sinn dienen.",
     "donateNow": "Jetzt Spenden",
     "discoverOurPrograms": "Entdecke unsere Programme",
-    "scroll": "Scrollen"
+    "scroll": "Scrollen",
+    "takeActionToday": "Handeln Sie Heute",
+    "takeActionDesc": "Schließen Sie sich unserer Mission durch Spenden, Partnerschaften, Kommunikation und Medienengagement an. Jede Aktion stärkt unseren Einfluss in Buyala.",
+    "actionDonateTitle": "Jetzt Spenden",
+    "actionDonateDesc": "Unterstützen Sie uns einmalig oder regelmäßig: täglich, wöchentlich, monatlich oder jährlich.",
+    "actionDonateCta": "Mit dem Spenden beginnen",
+    "actionPartnerTitle": "Partner Werden",
+    "actionPartnerDesc": "Werden Sie Partner als Einzelperson, Kirche, NGO oder Unternehmen.",
+    "actionPartnerCta": "Mit Uns Partnerschaften",
+    "actionSubscribeTitle": "Newsletter Abonnieren",
+    "actionSubscribeDesc": "Erhalten Sie Updates, Geschichten und Fortschritte aus unserer laufenden Arbeit.",
+    "actionSubscribeCta": "Abonnieren",
+    "actionContactTitle": "Kontakt Aufnehmen",
+    "actionContactDesc": "Melden Sie sich für Zusammenarbeit, Supportfragen oder Anfragen zum Ministerium.",
+    "actionContactCta": "Kontaktieren Sie Uns",
+    "actionSponsorTitle": "Ein Projekt Sponsern",
+    "actionSponsorDesc": "Engagieren Sie sich direkt in einem Projekt durch Sponsoring, freiwillige Mitarbeit oder Spenden.",
+    "actionSponsorCta": "Möglichkeiten Ansehen",
+    "actionMediaTitle": "Medien & Videos Ansehen",
+    "actionMediaDesc": "Folgen Sie sozialen Updates und Videoclips, um den Einfluss vor Ort zu sehen.",
+    "actionMediaCta": "Medien Erkunden",
+    "statStudents": "Ausgebildete Schüler",
+    "statLives": "Gestärkte Leben",
+    "statPrograms": "Outreach-Programme",
+    "coreInitiativesTitle": "Unsere Kerninitiativen",
+    "coreInitiativesDesc": "Nachhaltige Veränderungen durch gezielte Programme zur Förderung und Ausrüstung von Menschen schaffen.",
+    "viewAllInitiatives": "Alle Initiativen Ansehen",
+    "programSchoolTitle": "Schul-Outreach",
+    "programSchoolDesc": "Bereitstellung von Schulmaterialien, Mentoring-Sitzungen und praktischer Unterstützung für Lernende und Schulen.",
+    "programGirlsTitle": "Mädchenministerium",
+    "programGirlsDesc": "Aufbau von Selbstvertrauen und Sinn durch Mentoring, Jüngerschaft und Unterstützung bei Lebenskompetenzen.",
+    "programPrisonsTitle": "Programm für Ex-Häftlinge",
+    "programPrisonsDesc": "Ehemaligen Häftlingen helfen, sich durch Beratung, Kompetenztraining und praktische Unterstützung zu reintegrieren.",
+    "donationCtaTitle1": "Ihre Großzügigkeit ",
+    "donationCtaTitleMiracles": "schafft Wunder.",
+    "donationCtaDesc": "Jede Spende fließt direkt in die Schulbildung eines Kindes, die Ernährung einer Familie und die Bereitstellung wesentlicher Krisenhilfe.",
+    "makeDonation": "Spenden",
+    "becomeVolunteer": "Freiwilliger Werden"
   },
   "Footer": {
     "mission": "Wir stärken Leben und wecken Hoffnung durch Bildung, Gemeinschaftsaufbau und wohltätige Hilfe.",
@@ -44,67 +81,111 @@
       "sponsorship": {
         "title": "Patenschaftsprogramm",
         "description": "Bildungsunterstützung, Schulgebühren und Grundbedürfnisse für gefährdete Kinder, um ihren Schulbesuch zu sichern.",
-        "stats": ["Mehrere Kinder gefördert", "Ganzheitliche Unterstützung"]
+        "stats": [
+          "Mehrere Kinder gefördert",
+          "Ganzheitliche Unterstützung"
+        ]
       },
       "luminaSchool": {
         "title": "Lumina Junior School",
         "description": "Unser grundlegendes Bildungszentrum, das junge Köpfe mit qualitativ hochwertiger Bildung und moralischer Führung fördert.",
-        "stats": ["Hochwertiger Lehrplan", "Engagiertes Personal"]
+        "stats": [
+          "Hochwertiger Lehrplan",
+          "Engagiertes Personal"
+        ]
       },
       "agriculture": {
         "title": "Landwirtschaft & Wertschöpfung",
         "description": "Wir befähigen Gemeinschaften mit modernen Anbaumethoden, um Ernährungssicherheit und wirtschaftliche Stabilität zu erreichen.",
-        "stats": ["Landwirtschafts-Workshops", "Nachhaltige Praktiken"]
+        "stats": [
+          "Landwirtschafts-Workshops",
+          "Nachhaltige Praktiken"
+        ]
       },
       "exPrisoners": {
         "title": "Programm für Ex-Häftlinge",
         "description": "Wir unterstützen die Wiedereingliederung durch Beratung, Jüngerschaft, Berufstraining und praktische Hilfe für ehemalige Häftlinge.",
-        "stats": ["260 Leben wiederhergestellt", "140 Arbeitsvermittlungen", "45 Kleinunternehmen gegründet"]
+        "stats": [
+          "260 Leben wiederhergestellt",
+          "140 Arbeitsvermittlungen",
+          "45 Kleinunternehmen gegründet"
+        ]
       },
       "teenageGirls": {
         "title": "Engagement für Teenager-Mädchen",
         "description": "Ein sicheres und glaubensorientiertes Programm, das Selbstvertrauen, Würde, Gesundheitsbewusstsein und Führungsqualitäten bei Mädchen fördert.",
-        "stats": ["Über 900 Mädchen betreut", "22 Mentoring-Gruppen", "80 Pflegepakete verteilt"]
+        "stats": [
+          "Über 900 Mädchen betreut",
+          "22 Mentoring-Gruppen",
+          "80 Pflegepakete verteilt"
+        ]
       },
       "leadership": {
         "title": "Stärkung von Führungskompetenzen",
         "description": "Wir statten Jugendliche und Gemeindeleiter mit Kommunikations-, Planungs- und serviceorientierten Führungsfähigkeiten aus.",
-        "stats": ["Über 500 Leiter ausgebildet", "18 Führungskohorten", "60 geleitete Gemeindeprojekte"]
+        "stats": [
+          "Über 500 Leiter ausgebildet",
+          "18 Führungskohorten",
+          "60 geleitete Gemeindeprojekte"
+        ]
       },
       "communityOutreaches": {
         "title": "Gemeindebesuche",
         "description": "Familien erhalten praktische Unterstützung durch Berufstraining, Spargruppen und wirtschaftliche Förderprogramme.",
-        "stats": ["1.200 Haushalte unterstützt", "300 Gründerzuschüsse", "15 aktive Spargruppen"]
+        "stats": [
+          "1.200 Haushalte unterstützt",
+          "300 Gründerzuschüsse",
+          "15 aktive Spargruppen"
+        ]
       },
       "schoolOutreaches": {
         "title": "Schulbesuche",
         "description": "Wir arbeiten mit Schulen zusammen, um Lehrmaterialien, Mentoring-Besuche und Lebenskompetenz-Sitzungen anzubieten.",
-        "stats": ["35 Partnerschulen", "Über 4.800 Schüler erreicht", "120 Schulbesuche"]
+        "stats": [
+          "35 Partnerschulen",
+          "Über 4.800 Schüler erreicht",
+          "120 Schulbesuche"
+        ]
       },
       "discipleship": {
         "title": "Jüngerschaftstraining",
         "description": "Vertiefung des Glaubens und Charakterbildung durch kontinuierliche spirituelle Bildung und Mentoring.",
-        "stats": ["Spirituelles Wachstum", "Gemeindegruppen"]
+        "stats": [
+          "Spirituelles Wachstum",
+          "Gemeindegruppen"
+        ]
       },
       "elderlyFood": {
         "title": "Lebensmittelhilfe für ältere Menschen",
         "description": "Bereitstellung wesentlicher Ernährungsunterstützung und Pflegepakete für gefährdete ältere Menschen in unseren Gemeinschaften.",
-        "stats": ["Monatliche Lebensmittelaktionen", "Pflege & Gesellschaft"]
+        "stats": [
+          "Monatliche Lebensmittelaktionen",
+          "Pflege & Gesellschaft"
+        ]
       },
       "parentsLivelihood": {
         "title": "Lebensunterhalt der Eltern",
         "description": "Befähigung von Eltern durch finanzielle Bildung und Starthilfe, um ihre Familien zu versorgen.",
-        "stats": ["Finanzielle Unabhängigkeit", "Familienstabilität"]
+        "stats": [
+          "Finanzielle Unabhängigkeit",
+          "Familienstabilität"
+        ]
       },
       "workspaces": {
         "title": "Schaffung von Arbeitsräumen",
         "description": "Aufbau von kollaborativen Umgebungen und Berufszentren zur Förderung der Kompetenzentwicklung.",
-        "stats": ["Kompetenztraining", "Inkubation von Unternehmen"]
+        "stats": [
+          "Kompetenztraining",
+          "Inkubation von Unternehmen"
+        ]
       },
       "medical": {
         "title": "Medizinisches Unterstützungsprogramm",
         "description": "Gesundheitsaufklärung, medizinische Camps und Gesundheitsfinanzierung für Familien ohne regelmäßigen Zugang zu Behandlungen.",
-        "stats": ["Gesundheitscamps", "Notfallhilfe"]
+        "stats": [
+          "Gesundheitscamps",
+          "Notfallhilfe"
+        ]
       }
     }
   }
