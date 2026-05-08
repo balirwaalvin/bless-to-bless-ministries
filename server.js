@@ -9,7 +9,6 @@ const server = http.createServer((request, response) => {
   handler(request, response, {
     public: path.join(__dirname, "out"),
     cleanUrls: true,
-    rewrites: [{ source: "**", destination: "/index.html" }],
   });
 });
 
